@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConsultViewController">
+            <connections>
+                <outlet property="bottomTableView" destination="gDK-5P-SMy" id="H3S-Kw-lEX"/>
+                <outlet property="topTableView" destination="6SZ-xS-XFw" id="k5q-Hj-RfO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rYx-Dk-5hJ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6SZ-xS-XFw" userLabel="TopTableView">
+                    <rect key="frame" x="0.0" y="44" width="375" height="80"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="FcL-p0-E3x"/>
+                    </constraints>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gDK-5P-SMy" userLabel="BottomTableView">
+                    <rect key="frame" x="0.0" y="144" width="375" height="523"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rYx-Dk-5hJ" secondAttribute="trailing" id="5uK-0e-cnv"/>
+                <constraint firstItem="6SZ-xS-XFw" firstAttribute="top" secondItem="rYx-Dk-5hJ" secondAttribute="bottom" id="QQv-hz-A0n"/>
+                <constraint firstAttribute="bottom" secondItem="gDK-5P-SMy" secondAttribute="bottom" id="Sxb-uK-Mov"/>
+                <constraint firstItem="6SZ-xS-XFw" firstAttribute="top" secondItem="gDK-5P-SMy" secondAttribute="top" constant="-100" id="Tsa-rU-Vhn"/>
+                <constraint firstItem="rYx-Dk-5hJ" firstAttribute="leading" secondItem="6SZ-xS-XFw" secondAttribute="leading" id="b0r-fZ-yiX"/>
+                <constraint firstItem="6SZ-xS-XFw" firstAttribute="trailing" secondItem="gDK-5P-SMy" secondAttribute="trailing" id="byY-FZ-vEr"/>
+                <constraint firstItem="6SZ-xS-XFw" firstAttribute="leading" secondItem="gDK-5P-SMy" secondAttribute="leading" id="ft2-i1-8NC"/>
+                <constraint firstItem="rYx-Dk-5hJ" firstAttribute="trailing" secondItem="6SZ-xS-XFw" secondAttribute="trailing" id="mFs-Qp-bVQ"/>
+                <constraint firstItem="rYx-Dk-5hJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rqI-V8-sUe"/>
+                <constraint firstItem="rYx-Dk-5hJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sRb-Pt-hni"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="272.5" y="297.5"/>
+        </view>
+    </objects>
+</document>
