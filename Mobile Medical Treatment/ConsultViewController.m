@@ -9,6 +9,8 @@
 #import "ConsultViewController.h"
 #import "MessageViewController.h"
 #import "PatientTableViewCell.h"
+#import "HistoryPatientViewController.h"
+#import "Patient.h"
 
 @interface ConsultViewController ()
 
@@ -30,8 +32,22 @@
     _bottomTableView.delegate = self;
     _bottomTableView.dataSource = self;
     
+    Patient * p1 = [[Patient alloc]init];
+    p1.name = @"汪峰";
+    p1.detail = @"心脏病";
+    p1.sex = YES;
+    p1.age = 34;
     
-//    self.type = [NSMutableArray arrayWithObjects:type1,type2,type3,type4,type5, nil];
+    Patient * p2 = [[Patient alloc]init];
+    p2.name = @"章子怡";
+    p2.detail = @"心绞痛";
+    p2.sex = NO;
+    p2.age = 37;
+    
+    
+    
+    
+    self.type = [NSMutableArray arrayWithObjects:p1,p2, nil];
     
 }
 
@@ -76,7 +92,7 @@
     }
     else if([tableView isEqual:_bottomTableView])
     {
-//        NSInteger row = indexPath.row;
+        NSInteger row = indexPath.row;
     static NSString *CellIdentifier = @"Cell";
     PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
@@ -87,11 +103,19 @@
 //        cell.textLabel.font = [UIFont systemFontOfSize:17.0];
 //        cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
 //        FunctionType * item = self.type[row];
-        cell.nameField.text = @"汪峰";
-        cell.age.text = @"12";
+        Patient * item = self.type[row];
+        cell.nameField.text = item.name;
+        cell.age.text = [NSString stringWithFormat:@"%ld",item.age];
         cell.sex.text = @"男";
         cell.sex.textColor = [UIColor blueColor];
-        cell.detailFiled.text = @"心脏病";
+        cell.detailFiled.text = item.detail;
+        if (item.sex) {
+            cell.sex.text = @"男";
+            cell.sex.textColor = [UIColor blueColor];
+        }else{
+            cell.sex.text = @"女";
+            cell.sex.textColor = [UIColor redColor];
+        }
         cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"blue.png"] toSize:CGSizeMake(40,40)];
     }
         return cell;
@@ -109,6 +133,16 @@
     else
     {
         return 60;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //变色效果   不加上一直是灰色
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if([tableView isEqual:_topTableView]){
+        HistoryPatientViewController * historyPatientViewController = [[HistoryPatientViewController alloc]initWithNibName:@"HistoryPatientViewController" bundle:nil];
+        [self.navigationController pushViewController:historyPatientViewController animated:YES];
     }
 }
 

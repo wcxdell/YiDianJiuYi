@@ -14,4 +14,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *bottomTableView;
 
 @property (strong,nonatomic) NSMutableArray * type;
+
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (strong,nonatomic) NSMutableArray * searchType;
 @end

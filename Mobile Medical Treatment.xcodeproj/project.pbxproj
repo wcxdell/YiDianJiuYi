@@ -86,6 +86,8 @@
 		D3357B311BA690AC00383AE0 /* yuyue_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D3357B301BA690AC00383AE0 /* yuyue_blue.png */; };
 		D3357B341BA6DCA200383AE0 /* PatientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3357B331BA6DCA200383AE0 /* PatientTableViewCell.m */; };
 		D3357B371BA8341600383AE0 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = D3357B361BA8341600383AE0 /* Patient.m */; };
+		D3357B391BA83AA700383AE0 /* HistoryPatientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3357B381BA83AA700383AE0 /* HistoryPatientViewController.xib */; };
+		D3357B3C1BA83ADF00383AE0 /* HistoryPatientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3357B3B1BA83ADF00383AE0 /* HistoryPatientViewController.m */; };
 		D348AE8F1BA3B7FA006AE53E /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = D348AE8E1BA3B7F9006AE53E /* arrow_right.png */; };
 		D348AEA31BA3B856006AE53E /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = D348AE931BA3B856006AE53E /* arrow_right.png */; };
 		D348AEA41BA3B856006AE53E /* ask_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D348AE941BA3B856006AE53E /* ask_blue.png */; };
@@ -210,6 +212,9 @@
 		D3357B331BA6DCA200383AE0 /* PatientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientTableViewCell.m; sourceTree = "<group>"; };
 		D3357B351BA833F700383AE0 /* Patient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
 		D3357B361BA8341600383AE0 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
+		D3357B381BA83AA700383AE0 /* HistoryPatientViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryPatientViewController.xib; sourceTree = "<group>"; };
+		D3357B3A1BA83ADF00383AE0 /* HistoryPatientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryPatientViewController.h; sourceTree = "<group>"; };
+		D3357B3B1BA83ADF00383AE0 /* HistoryPatientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryPatientViewController.m; sourceTree = "<group>"; };
 		D348AE8E1BA3B7F9006AE53E /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		D348AE931BA3B856006AE53E /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow_right.png; path = ../image/arrow_right.png; sourceTree = "<group>"; };
 		D348AE941BA3B856006AE53E /* ask_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ask_blue.png; path = ../image/ask_blue.png; sourceTree = "<group>"; };
@@ -292,6 +297,9 @@
 				6FBEEC2E1B9C310F00D5D258 /* ConsultViewController.h */,
 				6FBEEC2F1B9C310F00D5D258 /* ConsultViewController.m */,
 				6FBEEC301B9C310F00D5D258 /* ConsultViewController.xib */,
+				D3357B3A1BA83ADF00383AE0 /* HistoryPatientViewController.h */,
+				D3357B3B1BA83ADF00383AE0 /* HistoryPatientViewController.m */,
+				D3357B381BA83AA700383AE0 /* HistoryPatientViewController.xib */,
 				6FBEEC331B9C313400D5D258 /* FriendsViewController.h */,
 				6FBEEC341B9C313400D5D258 /* FriendsViewController.m */,
 				6FBEEC351B9C313400D5D258 /* FriendsViewController.xib */,
@@ -527,6 +535,7 @@
 				D3357B2F1BA6904500383AE0 /* btn_adrpre.jpg in Resources */,
 				6F7006311BA16E1A00663620 /* noti_news@2x.png in Resources */,
 				6F41F5AD1B9E85CA00BA6D31 /* fire1.jpg in Resources */,
+				D3357B391BA83AA700383AE0 /* HistoryPatientViewController.xib in Resources */,
 				6FC4E6AD1B9FD2B300096C57 /* zixun_jiyinke_icon_btn.png in Resources */,
 				6FC1E9B21BA02CB30067864F /* AdvertisementViewController.xib in Resources */,
 				6F70062B1BA16DD000663620 /* erweima.png in Resources */,
@@ -598,6 +607,7 @@
 				6FC4EEA41BA277DD0033CA74 /* NearbyHospitalViewController.m in Sources */,
 				6FC1E9B11BA02CB30067864F /* AdvertisementViewController.m in Sources */,
 				6FBEEBF21B9BDFF400D5D258 /* AppDelegate.mm in Sources */,
+				D3357B3C1BA83ADF00383AE0 /* HistoryPatientViewController.m in Sources */,
 				6FBEEBEF1B9BDFF400D5D258 /* main.m in Sources */,
 				D3357B371BA8341600383AE0 /* Patient.m in Sources */,
 				D3357B341BA6DCA200383AE0 /* PatientTableViewCell.m in Sources */,

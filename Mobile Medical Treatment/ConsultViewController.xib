@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConsultViewController">
             <connections>
                 <outlet property="bottomTableView" destination="gDK-5P-SMy" id="H3S-Kw-lEX"/>
+                <outlet property="searchBar" destination="rYx-Dk-5hJ" id="v6r-Hl-5gx"/>
                 <outlet property="topTableView" destination="6SZ-xS-XFw" id="k5q-Hj-RfO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

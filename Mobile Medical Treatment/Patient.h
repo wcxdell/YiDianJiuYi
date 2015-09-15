@@ -10,10 +10,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface FunctionType : NSObject
+@interface Patient : NSObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *detail;
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic,assign) NSInteger age;
+@property (nonatomic,assign) BOOL sex;
+
 
 @end
