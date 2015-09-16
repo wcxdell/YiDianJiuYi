@@ -16,7 +16,9 @@
 
 @end
 
-@implementation ConsultViewController
+@implementation ConsultViewController{
+    BOOL isSearch;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +33,10 @@
     
     _bottomTableView.delegate = self;
     _bottomTableView.dataSource = self;
+    
+    _searchBar.showsCancelButton = YES;
+    _searchBar.delegate = self;
+    isSearch = NO;
     
     Patient * p1 = [[Patient alloc]init];
     p1.name = @"汪峰";
@@ -66,8 +72,11 @@
         return 1;
     }
     else if ([tableView isEqual:_bottomTableView]){
-//        NSLog(@"数组%ld",_type.count);
-        return self.type.count;
+        if (isSearch) {
+            return self.searchType.count;
+        }else{
+            return self.type.count;
+        }
     }
     else{
         return 0;
@@ -103,7 +112,12 @@
 //        cell.textLabel.font = [UIFont systemFontOfSize:17.0];
 //        cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
 //        FunctionType * item = self.type[row];
-        Patient * item = self.type[row];
+        Patient * item = [[Patient alloc]init];;
+        if (isSearch) {
+            item = self.searchType[row];
+        }else{
+            item = self.type[row];
+        }
         cell.nameField.text = item.name;
         cell.age.text = [NSString stringWithFormat:@"%ld",item.age];
         cell.sex.text = @"男";
@@ -146,6 +160,31 @@
     }
 }
 
+-(void)searchBarCancelButtonClicked:(UISearchBar * )searchBar{
+    isSearch = NO;
+    [self.bottomTableView reloadData];
+    [self.searchBar resignFirstResponder];
+}
+
+-(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    [self filterBySubstring:searchText];
+}
+
+-(void) searchBarSearchButtonClicked:(UISearchBar*)searchBar{
+    [self filterBySubstring:self.searchBar.text];
+    [self.searchBar resignFirstResponder];
+}
+
+
+-(void)filterBySubstring:(NSString*)subStr{
+    isSearch = YES;
+    NSPredicate* pred = [NSPredicate predicateWithFormat:@"SELF.name CONTAINS[c] %@",subStr];
+    
+//    _searchType = [_type filterUsingPredicate:pred];
+    self.searchType = [NSMutableArray arrayWithArray:self.type];
+    [self.searchType filterUsingPredicate:pred];
+    [self.bottomTableView reloadData];
+}
 /*
 #pragma mark - Navigation
 

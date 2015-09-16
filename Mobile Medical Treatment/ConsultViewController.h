@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ConsultViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface ConsultViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *topTableView;
 
 @property (strong, nonatomic) IBOutlet UITableView *bottomTableView;
 
-@property (strong,nonatomic) NSMutableArray * type;
+@property NSMutableArray * type;
 
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
-@property (strong,nonatomic) NSMutableArray * searchType;
+@property  NSMutableArray * searchType;
+
+
 @end
