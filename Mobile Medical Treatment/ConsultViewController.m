@@ -108,6 +108,7 @@
     {
 //        NSLog(@"%ld",row);
         cell = [[PatientTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
 //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 //        cell.textLabel.font = [UIFont systemFontOfSize:17.0];
 //        cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
@@ -131,7 +132,7 @@
             cell.sex.textColor = [UIColor redColor];
         }
         cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"blue.png"] toSize:CGSizeMake(40,40)];
-    }
+    
         return cell;
     }
     else
@@ -164,6 +165,7 @@
     isSearch = NO;
     [self.bottomTableView reloadData];
     [self.searchBar resignFirstResponder];
+    self.searchBar.text = @"";
 }
 
 -(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
@@ -173,6 +175,7 @@
 -(void) searchBarSearchButtonClicked:(UISearchBar*)searchBar{
     [self filterBySubstring:self.searchBar.text];
     [self.searchBar resignFirstResponder];
+    self.searchBar.text = @"";
 }
 
 
@@ -184,6 +187,11 @@
     self.searchType = [NSMutableArray arrayWithArray:self.type];
     [self.searchType filterUsingPredicate:pred];
     [self.bottomTableView reloadData];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 /*
 #pragma mark - Navigation

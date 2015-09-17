@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "MessageViewController.h"
-#import "HospitalRegisterViewController.h"
+#import "OrderViewController.h"
 #import "ConsultViewController.h"
 #import "FriendsViewController.h"
 #import "AboutMyViewController.h"
@@ -119,7 +119,7 @@
     
     UIImage *Image2_1 = [self reSizeImage:[UIImage imageNamed:@"btn_adrpre.jpg"] toSize:CGSizeMake(tabbarHeight, tabbarHeight)];
     UIImage *Image2_2 = [self reSizeImage:[UIImage imageNamed:@"yuyue_blue.png"] toSize:CGSizeMake(tabbarHeight, tabbarHeight)];
-    UINavigationController *three = [[UINavigationController alloc] initWithRootViewController:[[HospitalRegisterViewController alloc] initWithNibName:@"HospitalRegisterViewController" bundle:nil]];
+    UINavigationController *three = [[UINavigationController alloc] initWithRootViewController:[[OrderViewController alloc] initWithNibName:@"OrderViewController" bundle:nil]];
     three.tabBarItem = [self itemWithTitle:@"预约" image:Image2_1 selectedImage:Image2_2];
     
     UIImage *Image4_1 = [self reSizeImage:[UIImage imageNamed:@"friend_gray"] toSize:CGSizeMake(tabbarHeight, tabbarHeight)];

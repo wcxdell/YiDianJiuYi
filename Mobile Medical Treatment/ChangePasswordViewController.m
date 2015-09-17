@@ -19,10 +19,7 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"修改密码";
     
-    _view1.layer.borderWidth = 0.3;
-    _view1.layer.borderColor = [UIColor colorWithRed:121/255.0 green:121/255.0 blue:121/255.0 alpha:0.8].CGColor;
-    _view3.layer.borderWidth = 0.3;
-    _view3.layer.borderColor = [UIColor colorWithRed:121/255.0 green:121/255.0 blue:121/255.0 alpha:0.8].CGColor;
+    
     
     _button.layer.cornerRadius = 5.0;
     _button.layer.borderWidth = 1.0;

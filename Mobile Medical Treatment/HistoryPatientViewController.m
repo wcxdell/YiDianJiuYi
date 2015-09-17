@@ -89,6 +89,12 @@
         return 60;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //变色效果   不加上一直是灰色
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
 /*
 #pragma mark - Navigation
 

@@ -28,21 +28,17 @@
     self.title = @"我的";
     
     FunctionType *type1 = [[FunctionType alloc]init];
-    type1.name = @"健康二维码";
-    type1.image = [MessageViewController scale:[UIImage imageNamed:@"erweima"] toSize:CGSizeMake(30, 30)];
+    type1.name = @"更改密码";
+    type1.image = [MessageViewController scale:[UIImage imageNamed:@"account_security"] toSize:CGSizeMake(30, 30)];
     
     FunctionType *type2 = [[FunctionType alloc]init];
-    type2.name = @"更改密码";
-    type2.image = [MessageViewController scale:[UIImage imageNamed:@"account_security"] toSize:CGSizeMake(30, 30)];
+    type2.name = @"新消息通知";
+    type2.image = [MessageViewController scale:[UIImage imageNamed:@"noti_news"] toSize:CGSizeMake(30, 30)];
     
     FunctionType *type3 = [[FunctionType alloc]init];
-    type3.name = @"新消息通知";
-    type3.image = [MessageViewController scale:[UIImage imageNamed:@"noti_news"] toSize:CGSizeMake(30, 30)];
-    
-    FunctionType *type4 = [[FunctionType alloc]init];
-    type4.name = @"关于";
-    type4.image = [MessageViewController scale:[UIImage imageNamed:@"about"] toSize:CGSizeMake(30, 30)];
-    self.types = [NSMutableArray arrayWithObjects: type1, type2, type3, type4, nil];
+    type3.name = @"关于";
+    type3.image = [MessageViewController scale:[UIImage imageNamed:@"about"] toSize:CGSizeMake(30, 30)];
+    self.types = [NSMutableArray arrayWithObjects: type1, type2, type3, nil];
     
 
 }
@@ -93,15 +89,13 @@
    
     switch (indexPath.row) {
         case 0:
-            
-            break;
-        case 1:
             [self.navigationController pushViewController:changePasswordViewController animated:YES];
             break;
-        case 2:
+        case 1:
             [self.navigationController pushViewController:newRemindViewController animated:YES];
             break;
-            
+        case 2:
+            break;
         default:
             break;
     }
