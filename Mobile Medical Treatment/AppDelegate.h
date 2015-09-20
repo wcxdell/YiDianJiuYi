@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 //#import "BMapKit.h"
+#import "XMPP.h"
 
 //定义颜色
 #define RGBACOLOR(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
