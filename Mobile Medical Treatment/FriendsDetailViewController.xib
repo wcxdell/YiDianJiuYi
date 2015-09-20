@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendsDetailViewController">
+            <connections>
+                <outlet property="button" destination="NFr-0i-2k8" id="dbn-YI-eXl"/>
+                <outlet property="tableView" destination="b52-Cf-C8u" id="P73-D4-1s7"/>
+                <outlet property="topView" destination="ujn-jg-UbZ" id="OzP-ED-qJx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujn-jg-UbZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="CKr-ze-gvX"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="b52-Cf-C8u">
+                    <rect key="frame" x="0.0" y="100" width="375" height="200"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="Vdf-Qm-vux"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="1Zq-PK-trY"/>
+                        <outlet property="delegate" destination="-1" id="Ynv-uk-Bfn"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFr-0i-2k8">
+                    <rect key="frame" x="20" y="324" width="335" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="qAJ-cK-crk"/>
+                    </constraints>
+                    <state key="normal" title="添加到通讯录">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="b52-Cf-C8u" firstAttribute="top" secondItem="ujn-jg-UbZ" secondAttribute="bottom" id="6we-EO-s5c"/>
+                <constraint firstItem="NFr-0i-2k8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="WtG-PD-8O0"/>
+                <constraint firstAttribute="trailing" secondItem="ujn-jg-UbZ" secondAttribute="trailing" id="g8n-Q6-IfM"/>
+                <constraint firstItem="b52-Cf-C8u" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gP0-GB-Glj"/>
+                <constraint firstAttribute="trailing" secondItem="b52-Cf-C8u" secondAttribute="trailing" id="jPt-jP-Zpi"/>
+                <constraint firstItem="ujn-jg-UbZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kxQ-Qw-L9e"/>
+                <constraint firstItem="ujn-jg-UbZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mVn-Nc-GbP"/>
+                <constraint firstItem="NFr-0i-2k8" firstAttribute="top" secondItem="b52-Cf-C8u" secondAttribute="bottom" constant="24" id="rRr-an-QJI"/>
+                <constraint firstAttribute="trailing" secondItem="NFr-0i-2k8" secondAttribute="trailing" constant="20" id="td2-0T-Mua"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+        </view>
+    </objects>
+</document>

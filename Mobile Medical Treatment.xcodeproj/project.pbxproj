@@ -88,6 +88,10 @@
 		D3357B371BA8341600383AE0 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = D3357B361BA8341600383AE0 /* Patient.m */; };
 		D3357B391BA83AA700383AE0 /* HistoryPatientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3357B381BA83AA700383AE0 /* HistoryPatientViewController.xib */; };
 		D3357B3C1BA83ADF00383AE0 /* HistoryPatientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3357B3B1BA83ADF00383AE0 /* HistoryPatientViewController.m */; };
+		D3357B401BAAABA800383AE0 /* SearchFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3357B3E1BAAABA800383AE0 /* SearchFriendsViewController.m */; };
+		D3357B411BAAABA800383AE0 /* SearchFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3357B3F1BAAABA800383AE0 /* SearchFriendsViewController.xib */; };
+		D3357B451BAABB1200383AE0 /* FriendsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3357B431BAABB1200383AE0 /* FriendsDetailViewController.m */; };
+		D3357B461BAABB1200383AE0 /* FriendsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3357B441BAABB1200383AE0 /* FriendsDetailViewController.xib */; };
 		D348AE8F1BA3B7FA006AE53E /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = D348AE8E1BA3B7F9006AE53E /* arrow_right.png */; };
 		D348AEA31BA3B856006AE53E /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = D348AE931BA3B856006AE53E /* arrow_right.png */; };
 		D348AEA41BA3B856006AE53E /* ask_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D348AE941BA3B856006AE53E /* ask_blue.png */; };
@@ -215,6 +219,12 @@
 		D3357B381BA83AA700383AE0 /* HistoryPatientViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryPatientViewController.xib; sourceTree = "<group>"; };
 		D3357B3A1BA83ADF00383AE0 /* HistoryPatientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryPatientViewController.h; sourceTree = "<group>"; };
 		D3357B3B1BA83ADF00383AE0 /* HistoryPatientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryPatientViewController.m; sourceTree = "<group>"; };
+		D3357B3D1BAAABA800383AE0 /* SearchFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFriendsViewController.h; sourceTree = "<group>"; };
+		D3357B3E1BAAABA800383AE0 /* SearchFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFriendsViewController.m; sourceTree = "<group>"; };
+		D3357B3F1BAAABA800383AE0 /* SearchFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchFriendsViewController.xib; sourceTree = "<group>"; };
+		D3357B421BAABB1200383AE0 /* FriendsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsDetailViewController.h; sourceTree = "<group>"; };
+		D3357B431BAABB1200383AE0 /* FriendsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsDetailViewController.m; sourceTree = "<group>"; };
+		D3357B441BAABB1200383AE0 /* FriendsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsDetailViewController.xib; sourceTree = "<group>"; };
 		D348AE8E1BA3B7F9006AE53E /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
 		D348AE931BA3B856006AE53E /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow_right.png; path = ../image/arrow_right.png; sourceTree = "<group>"; };
 		D348AE941BA3B856006AE53E /* ask_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ask_blue.png; path = ../image/ask_blue.png; sourceTree = "<group>"; };
@@ -297,6 +307,12 @@
 				6FBEEC2E1B9C310F00D5D258 /* ConsultViewController.h */,
 				6FBEEC2F1B9C310F00D5D258 /* ConsultViewController.m */,
 				6FBEEC301B9C310F00D5D258 /* ConsultViewController.xib */,
+				D3357B3D1BAAABA800383AE0 /* SearchFriendsViewController.h */,
+				D3357B3E1BAAABA800383AE0 /* SearchFriendsViewController.m */,
+				D3357B3F1BAAABA800383AE0 /* SearchFriendsViewController.xib */,
+				D3357B421BAABB1200383AE0 /* FriendsDetailViewController.h */,
+				D3357B431BAABB1200383AE0 /* FriendsDetailViewController.m */,
+				D3357B441BAABB1200383AE0 /* FriendsDetailViewController.xib */,
 				D3357B3A1BA83ADF00383AE0 /* HistoryPatientViewController.h */,
 				D3357B3B1BA83ADF00383AE0 /* HistoryPatientViewController.m */,
 				D3357B381BA83AA700383AE0 /* HistoryPatientViewController.xib */,
@@ -545,7 +561,9 @@
 				6F7006331BA16E5600663620 /* userheader_icon.png in Resources */,
 				D348AEA61BA3B856006AE53E /* friend_gray.png in Resources */,
 				6FC6E48B1B9ED9E4008E1A07 /* mode33.png in Resources */,
+				D3357B411BAAABA800383AE0 /* SearchFriendsViewController.xib in Resources */,
 				6FC6E4891B9ED869008E1A07 /* mode1.png in Resources */,
+				D3357B461BAABB1200383AE0 /* FriendsDetailViewController.xib in Resources */,
 				D348AEAC1BA3B856006AE53E /* message_white_icon.png in Resources */,
 				6FC4E6A91B9FD23000096C57 /* zixun_zhongyike_icon_btn.png in Resources */,
 				D3357B0F1BA68A1A00383AE0 /* news_white2.png in Resources */,
@@ -601,12 +619,14 @@
 			files = (
 				6FBEEC311B9C310F00D5D258 /* ConsultViewController.m in Sources */,
 				6F7006371BA1817A00663620 /* ChangePasswordViewController.m in Sources */,
+				D3357B401BAAABA800383AE0 /* SearchFriendsViewController.m in Sources */,
 				6FBEEC2C1B9C30D300D5D258 /* OrderViewController.m in Sources */,
 				6F41F59F1B9E746500BA6D31 /* FunctionType.m in Sources */,
 				6FBEEC361B9C313400D5D258 /* FriendsViewController.m in Sources */,
 				6FC4EEA41BA277DD0033CA74 /* NearbyHospitalViewController.m in Sources */,
 				6FC1E9B11BA02CB30067864F /* AdvertisementViewController.m in Sources */,
 				6FBEEBF21B9BDFF400D5D258 /* AppDelegate.mm in Sources */,
+				D3357B451BAABB1200383AE0 /* FriendsDetailViewController.m in Sources */,
 				D3357B3C1BA83ADF00383AE0 /* HistoryPatientViewController.m in Sources */,
 				6FBEEBEF1B9BDFF400D5D258 /* main.m in Sources */,
 				D3357B371BA8341600383AE0 /* Patient.m in Sources */,

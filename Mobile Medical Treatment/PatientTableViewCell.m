@@ -32,8 +32,8 @@
         [self.contentView addSubview:self.nameField];
         
         self.age = [[UILabel alloc]initWithFrame:CGRectMake(300, 10, 70, 20)];
-        self.nameField.textAlignment = NSTextAlignmentLeft;
-        self.nameField.font = [UIFont boldSystemFontOfSize:18];
+        self.age.textAlignment = NSTextAlignmentLeft;
+        self.age.font = [UIFont boldSystemFontOfSize:18];
 //        self.age.textColor = [UIColor redColor];
         
         [self.contentView addSubview:self.age];

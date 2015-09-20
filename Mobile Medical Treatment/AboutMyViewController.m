@@ -27,6 +27,8 @@
     
     self.title = @"我的";
     
+    self.tableView.scrollEnabled = NO;
+    
     FunctionType *type1 = [[FunctionType alloc]init];
     type1.name = @"更改密码";
     type1.image = [MessageViewController scale:[UIImage imageNamed:@"account_security"] toSize:CGSizeMake(30, 30)];

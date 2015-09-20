@@ -7,7 +7,8 @@
 //
 
 #import "FriendsViewController.h"
-
+#import "MessageViewController.h"
+#import "SearchFriendsViewController.h"
 @interface FriendsViewController ()
 
 @end
@@ -18,11 +19,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"医圈";
+    
+//    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithImage:[MessageViewController scale:[UIImage imageNamed:@"message_white_icon"] toSize:CGSizeMake(25, 25)] style:UIBarButtonItemStylePlain target:self action:@selector(addFriend:)];
+//    self.navigationItem.rightBarButtonItem = rightButton;
+    
+//    UIBarButtonItem * rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"➕" style:UIBarButtonItemStylePlain target:self action:@selector(addFriend:)];
+//    
+//    
+//    self.navigationItem.rightBarButtonItem = rightBtn;
+    
+    UIBarButtonItem * rightButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFriend:)];
+    
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) addFriend:(id) sender
+{
+    SearchFriendsViewController *searchFriendsViewController = [[SearchFriendsViewController alloc]initWithNibName:@"SearchFriendsViewController" bundle:nil];
+    [self.navigationController pushViewController:searchFriendsViewController animated:YES];
+    
 }
 
 /*
