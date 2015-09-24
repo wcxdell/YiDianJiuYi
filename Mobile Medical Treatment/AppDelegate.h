@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 //#import "BMapKit.h"
-#import "XMPP.h"
+#import "XMPPFramework.h"
 #import "Message.h"
 #import "Static.h"
 
@@ -25,6 +25,8 @@
     NSString        *password;
     BOOL            isOpen;
     NSMutableArray * friends;
+    XMPPRoster     * xmppRoster;
+    XMPPRosterCoreDataStorage * xmppRosterCoreDataStorage;
 }
 
 
@@ -40,6 +42,8 @@
 
 
 @property (nonatomic,readonly)XMPPStream * xmppStream;
+@property (nonatomic,strong)XMPPRoster * xmppRoster;
+@property (nonatomic,strong)XMPPRosterCoreDataStorage * xmppRosterCoreDataStorage;
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *navigationController;

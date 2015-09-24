@@ -956,6 +956,8 @@ enum XMPPRosterFlags
 	[earlyPresenceElements removeAllObjects];
 }
 
+
+
 #ifdef _XMPP_MUC_H
 
 - (void)xmppStream:(XMPPStream *)sender didRegisterModule:(id)module

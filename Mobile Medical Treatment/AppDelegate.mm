@@ -26,9 +26,13 @@ NSString *const SERVER = @"127.0.0.1";
 
 @synthesize xmppStream;
 @synthesize friends;
+@synthesize xmppRoster;
+@synthesize xmppRosterCoreDataStorage;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    xmppRoster.autoAcceptKnownPresenceSubscriptionRequests = NO;
     // Override point for customization after application launch.
     LoginViewController *loginViewController = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
     self.navigationController = [[UINavigationController alloc]initWithRootViewController:loginViewController];
@@ -62,6 +66,8 @@ NSString *const SERVER = @"127.0.0.1";
 //    }
     
     [self.window makeKeyAndVisible];
+    
+//    xmppRoster.autoAcceptKnownPresenceSubscriptionRequests = YES;
     
     return YES;
 }
@@ -173,6 +179,10 @@ NSString *const SERVER = @"127.0.0.1";
     xmppStream = [[XMPPStream alloc]init];
     [xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
     
+    xmppRosterCoreDataStorage = [[XMPPRosterCoreDataStorage alloc]init];
+    xmppRoster = [[XMPPRoster alloc] initWithRosterStorage:xmppRosterCoreDataStorage];
+    
+    
 }
 
 - (void)goOnline {
@@ -246,10 +256,20 @@ NSString *const SERVER = @"127.0.0.1";
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
     
     [self goOnline];
+    [xmppRoster activate:xmppStream];
+    [xmppRoster addDelegate:self delegateQueue:dispatch_get_main_queue()];
 }
 
 //接收好友状态
 - (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{
+    
+    
+    if ([[presence type] isEqualToString:@"subscribe"])
+    {// Presence subscription request from someone who's NOT in our roster
+            
+        [self didReceivePresenceSubscriptionRequest:presence];
+    }
+    else{
     
     NSLog(@"presence = %@", presence);
     
@@ -276,6 +296,7 @@ NSString *const SERVER = @"127.0.0.1";
             [self.friendsListDelegate passValue];
         }
         
+    }
     }
     
 }
@@ -324,6 +345,22 @@ NSString *const SERVER = @"127.0.0.1";
 -(void)newMessageReceived:(Message *)mes{
     
     [self.messages addObject:mes];
+    
+}
+
+- (void)didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence
+{
+    //取得好友状态
+    NSString *presenceType = [NSString stringWithFormat:@"%@", [presence type]]; //online/offline
+    //请求的用户
+    NSString *presenceFromUser =[NSString stringWithFormat:@"%@", [[presence from] user]];
+    NSLog(@"presenceType:%@",presenceType);
+    
+    NSLog(@"111111111");
+    
+    XMPPJID *jid = [XMPPJID jidWithString:[NSString stringWithFormat:@"%@@%@", presenceFromUser,SERVER]];
+    [xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];
+//    [xmppRoster rejectPresenceSubscriptionRequestFrom:jid];
     
 }
 

@@ -44,6 +44,28 @@
     return scaledImage;
 }
 
+-(AppDelegate * )appDelegate{
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
+-(XMPPRoster*) xmppRoster{
+    return [[self appDelegate] xmppRoster];
+}
+
+- (IBAction)addFriends:(id)sender {
+    
+    AppDelegate* appDelegate = [self appDelegate];
+    NSMutableArray * friends = [NSMutableArray arrayWithArray:appDelegate.friends];
+    XMPPJID *jid = [XMPPJID jidWithString:@"3@127.0.0.1"];
+    if([friends indexOfObject:@"3@127.0.0.1"]!=NSNotFound){
+        NSLog(@"已经是好友了");
+    }else{
+        NSLog(@"不是好友");
+    }
+    
+    XMPPRoster * xmppRoster = [self xmppRoster];
+    [xmppRoster subscribePresenceToUser:jid];
+}
 
 /*
 #pragma mark - Navigation

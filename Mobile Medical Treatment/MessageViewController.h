@@ -9,11 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FunctionType.h"
 
-@interface MessageViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
-{
-    BOOL isFromStart;
-}
-
+@interface MessageViewController : UIViewController
 
 + (UIImage *)scale:(UIImage *)image toSize:(CGSize)size;
 
