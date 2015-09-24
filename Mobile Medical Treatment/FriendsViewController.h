@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "ChatViewController.h"
+@interface FriendsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,FriendsListDelegate>
 
-@interface FriendsViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) NSMutableArray* friends;
+@property (strong, nonatomic) IBOutlet UIControl *friendsNew;
 
 @end

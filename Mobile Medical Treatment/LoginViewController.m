@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "RegistViewController.h"
+#import "FriendsViewController.h"
+
 
 
 @interface LoginViewController ()
@@ -19,8 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    
     
     
     [_loginButton setTitle:@"登录" forState:UIControlStateNormal];
@@ -81,6 +81,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(AppDelegate*) appDelegate{
+    return (AppDelegate*)[[UIApplication sharedApplication] delegate];
+}
+
 
 /*
 #pragma mark - Navigation
@@ -103,4 +107,10 @@
         
     }];
 }
+
+
+
+
+
+
 @end

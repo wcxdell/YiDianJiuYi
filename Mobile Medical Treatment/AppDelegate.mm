@@ -14,6 +14,8 @@
 #import "FriendsViewController.h"
 #import "AboutMyViewController.h"
 
+NSString *const SERVER = @"127.0.0.1";
+
 @interface AppDelegate ()
 
 @end
@@ -22,12 +24,18 @@
 
 @implementation AppDelegate
 
+@synthesize xmppStream;
+@synthesize friends;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     LoginViewController *loginViewController = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
     self.navigationController = [[UINavigationController alloc]initWithRootViewController:loginViewController];
     self.window.rootViewController = self.navigationController;
+    
+    self.friends = [NSMutableArray array];
+    self.messages = [NSMutableArray array];
     
     [[UINavigationBar appearance] setBackgroundImage:[[UIImage imageNamed:@"blue.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 0, 11, 0)]  //????????
                                        forBarMetrics:UIBarMetricsDefault];
@@ -59,6 +67,7 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+    [self disconnect];
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
@@ -73,6 +82,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [self connect];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
@@ -150,5 +160,172 @@
     return reSizeImage;
     
 }
+
+
+//-(void)setUserListBlocks:(UserListNewFriendsOnlineBlock )block1 otherBlock:(UserListFriendsWentOfflineBlock)block2
+//{
+//    self.userListNewFriendsOnlineBlock = block1;
+//    self.userListFriendsWentOfflineBlock = block2;
+//}
+
+-(void)setupStream
+{
+    xmppStream = [[XMPPStream alloc]init];
+    [xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
+    
+}
+
+- (void)goOnline {
+    XMPPPresence *presence = [XMPPPresence presence];
+    [[self xmppStream] sendElement:presence];
+}
+
+- (void)goOffline {
+    XMPPPresence *presence = [XMPPPresence presenceWithType:@"unavailable"];
+    [[self xmppStream] sendElement:presence];
+}
+
+- (BOOL)connect {
+    
+    [self setupStream];
+    
+    //    [[NSUserDefaults standardUserDefaults] setObject:@"5@127.0.0.1" forKey:@"userID"];
+    //    [[NSUserDefaults standardUserDefaults] setObject:@"5" forKey:@"userPassword"];
+    //
+    //    NSString *jabberID = [[NSUserDefaults standardUserDefaults] stringForKey:@"userID"];
+    //    NSString *myPassword = [[NSUserDefaults standardUserDefaults] stringForKey:@"userPassword"];
+    
+    
+    if (![xmppStream isDisconnected]) {
+        return YES;
+    }
+    
+    //    if (jabberID == nil || myPassword == nil) {
+    //
+    //        return NO;
+    //    }
+    
+    [xmppStream setMyJID:[XMPPJID jidWithString:@"1@127.0.0.1"]];
+    [xmppStream setHostName:@"127.0.0.1"];
+    password = @"1";
+    
+    NSError *error = nil;
+    if (![xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error])
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[NSString stringWithFormat:@"Can't connect to server %@", [error localizedDescription]]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        
+        
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (void)disconnect
+{
+    [self goOffline];
+    [xmppStream disconnect];
+}
+
+
+
+- (void)xmppStreamDidConnect:(XMPPStream *)sender{
+    
+    isOpen = YES;
+    NSError *error = nil;
+    //验证密码
+    [[self xmppStream] authenticateWithPassword:password error:&error];
+    
+}
+
+- (void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
+    
+    [self goOnline];
+}
+
+//接收好友状态
+- (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{
+    
+    NSLog(@"presence = %@", presence);
+    
+    //取得好友状态
+    NSString *presenceType = [presence type]; //online/offline
+    //当前用户
+    NSString *userId = [[sender myJID] user];
+    //在线用户
+    NSString *presenceFromUser = [[presence from] user];
+    
+    NSLog(@"在线好友为：%@",presenceFromUser);
+    
+    if (![presenceFromUser isEqualToString:userId]) {
+        
+        //在线状态
+        if ([presenceType isEqualToString:@"available"]) {
+            
+            [self newFriendsOnline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, SERVER]];
+            [self.friendsListDelegate passValue];
+            
+        }else if ([presenceType isEqualToString:@"unavailable"]) {
+
+            [self friendsWentOffline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, SERVER]];
+            [self.friendsListDelegate passValue];
+        }
+        
+    }
+    
+}
+
+//在线好友
+-(void)newFriendsOnline:(NSString *)friendName{
+    
+    if (![self.friends containsObject:friendName]) {
+        [self.friends addObject:friendName];
+    }
+}
+
+//好友下线
+-(void)friendsWentOffline:(NSString *)friendName{
+    
+    [self.friends removeObject:friendName];
+}
+
+//收到消息
+- (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
+    
+//    NSLog(@"message = %@", message);
+    
+    NSString *idStr = [[message attributeForName:@"id"] stringValue];
+    NSString *msg = [[message elementForName:@"body"] stringValue];
+    NSString *from = [[message attributeForName:@"from"] stringValue];
+    NSString *to = [[message attributeForName:@"to"] stringValue];
+    NSString *strTime = [Static getCurrentTime];
+    
+    if (msg && from) {
+        Message *mes = [[Message alloc]init];
+        mes.strId = idStr;
+        mes.strText = msg;
+        mes.strFromUsername = from;
+        mes.strToUsername = to;
+        mes.msgType = MsgType_Receive;
+        mes.strTime = strTime;
+
+        [self newMessageReceived:mes];
+        [self.messageListDelegate passMessage];
+        
+    }
+    
+}
+
+-(void)newMessageReceived:(Message *)mes{
+    
+    [self.messages addObject:mes];
+    
+}
+
 
 @end

@@ -42,8 +42,6 @@
 		6FBEEC371B9C313400D5D258 /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FBEEC351B9C313400D5D258 /* FriendsViewController.xib */; };
 		6FBEEC3B1B9C316600D5D258 /* AboutMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBEEC391B9C316600D5D258 /* AboutMyViewController.m */; };
 		6FBEEC3C1B9C316600D5D258 /* AboutMyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FBEEC3A1B9C316600D5D258 /* AboutMyViewController.xib */; };
-		6FC1E9B11BA02CB30067864F /* AdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC1E9AF1BA02CB30067864F /* AdvertisementViewController.m */; };
-		6FC1E9B21BA02CB30067864F /* AdvertisementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FC1E9B01BA02CB30067864F /* AdvertisementViewController.xib */; };
 		6FC1E9B41BA030070067864F /* tab_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FC1E9B31BA030070067864F /* tab_background@2x.png */; };
 		6FC2924A1B9C73BC0070C902 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC292481B9C73BC0070C902 /* MessageViewController.m */; };
 		6FC2924B1B9C73BC0070C902 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FC292491B9C73BC0070C902 /* MessageViewController.xib */; };
@@ -69,8 +67,6 @@
 		6FC4E6AD1B9FD2B300096C57 /* zixun_jiyinke_icon_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FC4E6AB1B9FD2B300096C57 /* zixun_jiyinke_icon_btn.png */; };
 		6FC4EE9E1BA267650033CA74 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC4EE9D1BA267650033CA74 /* MapKit.framework */; };
 		6FC4EEA01BA267730033CA74 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC4EE9F1BA267730033CA74 /* CoreLocation.framework */; };
-		6FC4EEA41BA277DD0033CA74 /* NearbyHospitalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC4EEA21BA277DD0033CA74 /* NearbyHospitalViewController.m */; };
-		6FC4EEA51BA277DD0033CA74 /* NearbyHospitalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FC4EEA31BA277DD0033CA74 /* NearbyHospitalViewController.xib */; };
 		6FC693481BA2BDF80023F83D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC693471BA2BDF80023F83D /* QuartzCore.framework */; };
 		6FC6E4891B9ED869008E1A07 /* mode1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FC6E4881B9ED869008E1A07 /* mode1.png */; };
 		6FC6E48B1B9ED9E4008E1A07 /* mode33.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FC6E48A1B9ED9E4008E1A07 /* mode33.png */; };
@@ -120,7 +116,6 @@
 		D34ECEC11BAEA2D100DE2B8A /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ECEAB1BAEA2D100DE2B8A /* DDXMLElement.m */; };
 		D34ECEC21BAEA2D100DE2B8A /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ECEAD1BAEA2D100DE2B8A /* DDXMLNode.m */; };
 		D34ECEC31BAEA2D100DE2B8A /* build-libidn.sh in Resources */ = {isa = PBXBuildFile; fileRef = D34ECEB11BAEA2D100DE2B8A /* build-libidn.sh */; };
-		D34ECEC41BAEA2D100DE2B8A /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ECEB31BAEA2D100DE2B8A /* libidn.a */; };
 		D34ED0101BAEA2FC00DE2B8A /* XMPPAnonymousAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ECEC81BAEA2FC00DE2B8A /* XMPPAnonymousAuthentication.m */; };
 		D34ED0111BAEA2FC00DE2B8A /* XMPPDeprecatedDigestAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ECECB1BAEA2FC00DE2B8A /* XMPPDeprecatedDigestAuthentication.m */; };
 		D34ED0121BAEA2FC00DE2B8A /* XMPPDeprecatedPlainAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ECECE1BAEA2FC00DE2B8A /* XMPPDeprecatedPlainAuthentication.m */; };
@@ -252,6 +247,17 @@
 		D34ED0931BAEA35300DE2B8A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ED0921BAEA35300DE2B8A /* Security.framework */; };
 		D34ED0951BAEA36200DE2B8A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ED0941BAEA36200DE2B8A /* libxml2.dylib */; };
 		D34ED0971BAEA36B00DE2B8A /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ED0961BAEA36B00DE2B8A /* libresolv.dylib */; };
+		D34ED09C1BB01FCB00DE2B8A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ED09A1BB01FCB00DE2B8A /* ChatViewController.m */; };
+		D34ED09D1BB01FCB00DE2B8A /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D34ED09B1BB01FCB00DE2B8A /* ChatViewController.xib */; };
+		D34ED0A01BB02DE800DE2B8A /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ED09F1BB02DE800DE2B8A /* Message.m */; };
+		D34ED0A41BB02EC800DE2B8A /* Static.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ED0A31BB02EC800DE2B8A /* Static.m */; };
+		D34ED0B31BB038D000DE2B8A /* MsgReceiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ED0AE1BB038D000DE2B8A /* MsgReceiveCell.m */; };
+		D34ED0B51BB038D000DE2B8A /* MsgSendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ED0B11BB038D000DE2B8A /* MsgSendCell.m */; };
+		D34ED0B81BB2829900DE2B8A /* BlueBubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = D34ED0B71BB2829900DE2B8A /* BlueBubble2.png */; };
+		D34ED0BA1BB282A200DE2B8A /* GreenBubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = D34ED0B91BB282A200DE2B8A /* GreenBubble2.png */; };
+		D34ED0BE1BB2AB8800DE2B8A /* NewFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ED0BC1BB2AB8800DE2B8A /* NewFriendsViewController.m */; };
+		D34ED0BF1BB2AB8800DE2B8A /* NewFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D34ED0BD1BB2AB8800DE2B8A /* NewFriendsViewController.xib */; };
+		D34ED0C01BB3021A00DE2B8A /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ECEB31BAEA2D100DE2B8A /* libidn.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,9 +320,6 @@
 		6FBEEC381B9C316600D5D258 /* AboutMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutMyViewController.h; sourceTree = "<group>"; };
 		6FBEEC391B9C316600D5D258 /* AboutMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutMyViewController.m; sourceTree = "<group>"; };
 		6FBEEC3A1B9C316600D5D258 /* AboutMyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutMyViewController.xib; sourceTree = "<group>"; };
-		6FC1E9AE1BA02CB30067864F /* AdvertisementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisementViewController.h; sourceTree = "<group>"; };
-		6FC1E9AF1BA02CB30067864F /* AdvertisementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisementViewController.m; sourceTree = "<group>"; };
-		6FC1E9B01BA02CB30067864F /* AdvertisementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertisementViewController.xib; sourceTree = "<group>"; };
 		6FC1E9B31BA030070067864F /* tab_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_background@2x.png"; sourceTree = "<group>"; };
 		6FC292471B9C73BC0070C902 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		6FC292481B9C73BC0070C902 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
@@ -343,9 +346,6 @@
 		6FC4E6AB1B9FD2B300096C57 /* zixun_jiyinke_icon_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zixun_jiyinke_icon_btn.png; sourceTree = "<group>"; };
 		6FC4EE9D1BA267650033CA74 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6FC4EE9F1BA267730033CA74 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		6FC4EEA11BA277DD0033CA74 /* NearbyHospitalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyHospitalViewController.h; sourceTree = "<group>"; };
-		6FC4EEA21BA277DD0033CA74 /* NearbyHospitalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyHospitalViewController.m; sourceTree = "<group>"; };
-		6FC4EEA31BA277DD0033CA74 /* NearbyHospitalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyHospitalViewController.xib; sourceTree = "<group>"; };
 		6FC693471BA2BDF80023F83D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6FC6E4881B9ED869008E1A07 /* mode1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mode1.png; sourceTree = "<group>"; };
 		6FC6E48A1B9ED9E4008E1A07 /* mode33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mode33.png; sourceTree = "<group>"; };
@@ -686,6 +686,22 @@
 		D34ED0921BAEA35300DE2B8A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D34ED0941BAEA36200DE2B8A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		D34ED0961BAEA36B00DE2B8A /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
+		D34ED0991BB01FCB00DE2B8A /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		D34ED09A1BB01FCB00DE2B8A /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		D34ED09B1BB01FCB00DE2B8A /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		D34ED09E1BB02DE800DE2B8A /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		D34ED09F1BB02DE800DE2B8A /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		D34ED0A21BB02EC800DE2B8A /* Static.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Static.h; sourceTree = "<group>"; };
+		D34ED0A31BB02EC800DE2B8A /* Static.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Static.m; sourceTree = "<group>"; };
+		D34ED0AD1BB038D000DE2B8A /* MsgReceiveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgReceiveCell.h; sourceTree = "<group>"; };
+		D34ED0AE1BB038D000DE2B8A /* MsgReceiveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgReceiveCell.m; sourceTree = "<group>"; };
+		D34ED0B01BB038D000DE2B8A /* MsgSendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgSendCell.h; sourceTree = "<group>"; };
+		D34ED0B11BB038D000DE2B8A /* MsgSendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgSendCell.m; sourceTree = "<group>"; };
+		D34ED0B71BB2829900DE2B8A /* BlueBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueBubble2.png; sourceTree = "<group>"; };
+		D34ED0B91BB282A200DE2B8A /* GreenBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenBubble2.png; sourceTree = "<group>"; };
+		D34ED0BB1BB2AB8800DE2B8A /* NewFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFriendsViewController.h; sourceTree = "<group>"; };
+		D34ED0BC1BB2AB8800DE2B8A /* NewFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFriendsViewController.m; sourceTree = "<group>"; };
+		D34ED0BD1BB2AB8800DE2B8A /* NewFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewFriendsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -698,9 +714,9 @@
 				D34ED0931BAEA35300DE2B8A /* Security.framework in Frameworks */,
 				D34ED0911BAEA34A00DE2B8A /* CFNetwork.framework in Frameworks */,
 				6FC693481BA2BDF80023F83D /* QuartzCore.framework in Frameworks */,
-				D34ECEC41BAEA2D100DE2B8A /* libidn.a in Frameworks */,
 				6FC4EEA01BA267730033CA74 /* CoreLocation.framework in Frameworks */,
 				6FC4EE9E1BA267650033CA74 /* MapKit.framework in Frameworks */,
+				D34ED0C01BB3021A00DE2B8A /* libidn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,57 +753,9 @@
 			isa = PBXGroup;
 			children = (
 				D34ECE8B1BAEA28F00DE2B8A /* XMPP */,
-				6FBEEBF01B9BDFF400D5D258 /* AppDelegate.h */,
-				6FBEEBF11B9BDFF400D5D258 /* AppDelegate.mm */,
-				6FBEEC121B9BE03F00D5D258 /* LoginViewController.h */,
-				6FBEEC131B9BE03F00D5D258 /* LoginViewController.m */,
-				6FBEEC141B9BE03F00D5D258 /* LoginViewController.xib */,
-				6FBEEC171B9C11F800D5D258 /* RegistViewController.h */,
-				6FBEEC181B9C11F800D5D258 /* RegistViewController.m */,
-				6FBEEC191B9C11F800D5D258 /* RegistViewController.xib */,
-				6FC292471B9C73BC0070C902 /* MessageViewController.h */,
-				6FC292481B9C73BC0070C902 /* MessageViewController.m */,
-				6FC292491B9C73BC0070C902 /* MessageViewController.xib */,
-				6F41F59D1B9E746500BA6D31 /* FunctionType.h */,
-				6F41F59E1B9E746500BA6D31 /* FunctionType.m */,
-				D3357B321BA6DCA200383AE0 /* PatientTableViewCell.h */,
-				D3357B331BA6DCA200383AE0 /* PatientTableViewCell.m */,
-				D3357B351BA833F700383AE0 /* Patient.h */,
-				D3357B361BA8341600383AE0 /* Patient.m */,
-				6FBEEC291B9C30D300D5D258 /* OrderViewController.h */,
-				6FBEEC2A1B9C30D300D5D258 /* OrderViewController.m */,
-				6FBEEC2B1B9C30D300D5D258 /* OrderViewController.xib */,
-				6FBEEC2E1B9C310F00D5D258 /* ConsultViewController.h */,
-				6FBEEC2F1B9C310F00D5D258 /* ConsultViewController.m */,
-				6FBEEC301B9C310F00D5D258 /* ConsultViewController.xib */,
-				D3357B3D1BAAABA800383AE0 /* SearchFriendsViewController.h */,
-				D3357B3E1BAAABA800383AE0 /* SearchFriendsViewController.m */,
-				D3357B3F1BAAABA800383AE0 /* SearchFriendsViewController.xib */,
-				D3357B421BAABB1200383AE0 /* FriendsDetailViewController.h */,
-				D3357B431BAABB1200383AE0 /* FriendsDetailViewController.m */,
-				D3357B441BAABB1200383AE0 /* FriendsDetailViewController.xib */,
-				D3357B3A1BA83ADF00383AE0 /* HistoryPatientViewController.h */,
-				D3357B3B1BA83ADF00383AE0 /* HistoryPatientViewController.m */,
-				D3357B381BA83AA700383AE0 /* HistoryPatientViewController.xib */,
-				6FBEEC331B9C313400D5D258 /* FriendsViewController.h */,
-				6FBEEC341B9C313400D5D258 /* FriendsViewController.m */,
-				6FBEEC351B9C313400D5D258 /* FriendsViewController.xib */,
-				6FBEEC381B9C316600D5D258 /* AboutMyViewController.h */,
-				6FBEEC391B9C316600D5D258 /* AboutMyViewController.m */,
-				6FBEEC3A1B9C316600D5D258 /* AboutMyViewController.xib */,
-				6FC1E9AE1BA02CB30067864F /* AdvertisementViewController.h */,
+				D34ED0A11BB02DFD00DE2B8A /* Util */,
+				D34ED0A51BB02F6400DE2B8A /* ViewController */,
 				D3357B061BA6795300383AE0 /* Images.xcassets */,
-				6FC1E9AF1BA02CB30067864F /* AdvertisementViewController.m */,
-				6FC1E9B01BA02CB30067864F /* AdvertisementViewController.xib */,
-				6F7006341BA1817A00663620 /* ChangePasswordViewController.h */,
-				6F7006351BA1817A00663620 /* ChangePasswordViewController.m */,
-				6F7006361BA1817A00663620 /* ChangePasswordViewController.xib */,
-				6F7006391BA1B20400663620 /* NewRemindViewController.h */,
-				6F70063A1BA1B20400663620 /* NewRemindViewController.m */,
-				6F70063B1BA1B20400663620 /* NewRemindViewController.xib */,
-				6FC4EEA11BA277DD0033CA74 /* NearbyHospitalViewController.h */,
-				6FC4EEA21BA277DD0033CA74 /* NearbyHospitalViewController.m */,
-				6FC4EEA31BA277DD0033CA74 /* NearbyHospitalViewController.xib */,
 				6FBEEBF61B9BDFF400D5D258 /* Main.storyboard */,
 				6FBEEBFB1B9BDFF400D5D258 /* LaunchScreen.xib */,
 				6FBEEBEC1B9BDFF400D5D258 /* Supporting Files */,
@@ -825,6 +793,8 @@
 		6FC2922C1B9C5D8A0070C902 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				D34ED0B71BB2829900DE2B8A /* BlueBubble2.png */,
+				D34ED0B91BB282A200DE2B8A /* GreenBubble2.png */,
 				D3357B301BA690AC00383AE0 /* yuyue_blue.png */,
 				D3357B2E1BA6904500383AE0 /* btn_adrpre.jpg */,
 				D3357B0C1BA68A1A00383AE0 /* news_focus.jpg */,
@@ -1782,6 +1752,134 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		D34ED0A11BB02DFD00DE2B8A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D3357B351BA833F700383AE0 /* Patient.h */,
+				D3357B361BA8341600383AE0 /* Patient.m */,
+				6F41F59D1B9E746500BA6D31 /* FunctionType.h */,
+				6F41F59E1B9E746500BA6D31 /* FunctionType.m */,
+				D34ED09E1BB02DE800DE2B8A /* Message.h */,
+				D34ED09F1BB02DE800DE2B8A /* Message.m */,
+				D34ED0A21BB02EC800DE2B8A /* Static.h */,
+				D34ED0A31BB02EC800DE2B8A /* Static.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		D34ED0A51BB02F6400DE2B8A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6FBEEBF01B9BDFF400D5D258 /* AppDelegate.h */,
+				6FBEEBF11B9BDFF400D5D258 /* AppDelegate.mm */,
+				D34ED0AB1BB034C400DE2B8A /* Doctor */,
+				D34ED0AA1BB0347700DE2B8A /* AboutMe */,
+				D34ED0A91BB0345700DE2B8A /* Order */,
+				D34ED0A81BB0344A00DE2B8A /* Message */,
+				D34ED0A61BB02F7B00DE2B8A /* Login */,
+				D34ED0A71BB033F100DE2B8A /* Consult */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		D34ED0A61BB02F7B00DE2B8A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6FBEEC121B9BE03F00D5D258 /* LoginViewController.h */,
+				6FBEEC131B9BE03F00D5D258 /* LoginViewController.m */,
+				6FBEEC141B9BE03F00D5D258 /* LoginViewController.xib */,
+				6FBEEC171B9C11F800D5D258 /* RegistViewController.h */,
+				6FBEEC181B9C11F800D5D258 /* RegistViewController.m */,
+				6FBEEC191B9C11F800D5D258 /* RegistViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		D34ED0A71BB033F100DE2B8A /* Consult */ = {
+			isa = PBXGroup;
+			children = (
+				D3357B3A1BA83ADF00383AE0 /* HistoryPatientViewController.h */,
+				D3357B3B1BA83ADF00383AE0 /* HistoryPatientViewController.m */,
+				D3357B381BA83AA700383AE0 /* HistoryPatientViewController.xib */,
+				D3357B321BA6DCA200383AE0 /* PatientTableViewCell.h */,
+				D3357B331BA6DCA200383AE0 /* PatientTableViewCell.m */,
+				6FBEEC2E1B9C310F00D5D258 /* ConsultViewController.h */,
+				6FBEEC2F1B9C310F00D5D258 /* ConsultViewController.m */,
+				6FBEEC301B9C310F00D5D258 /* ConsultViewController.xib */,
+			);
+			name = Consult;
+			sourceTree = "<group>";
+		};
+		D34ED0A81BB0344A00DE2B8A /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				6FC292471B9C73BC0070C902 /* MessageViewController.h */,
+				6FC292481B9C73BC0070C902 /* MessageViewController.m */,
+				6FC292491B9C73BC0070C902 /* MessageViewController.xib */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		D34ED0A91BB0345700DE2B8A /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				6FBEEC291B9C30D300D5D258 /* OrderViewController.h */,
+				6FBEEC2A1B9C30D300D5D258 /* OrderViewController.m */,
+				6FBEEC2B1B9C30D300D5D258 /* OrderViewController.xib */,
+			);
+			name = Order;
+			sourceTree = "<group>";
+		};
+		D34ED0AA1BB0347700DE2B8A /* AboutMe */ = {
+			isa = PBXGroup;
+			children = (
+				6FBEEC381B9C316600D5D258 /* AboutMyViewController.h */,
+				6FBEEC391B9C316600D5D258 /* AboutMyViewController.m */,
+				6FBEEC3A1B9C316600D5D258 /* AboutMyViewController.xib */,
+				6F7006341BA1817A00663620 /* ChangePasswordViewController.h */,
+				6F7006351BA1817A00663620 /* ChangePasswordViewController.m */,
+				6F7006361BA1817A00663620 /* ChangePasswordViewController.xib */,
+				6F7006391BA1B20400663620 /* NewRemindViewController.h */,
+				6F70063A1BA1B20400663620 /* NewRemindViewController.m */,
+				6F70063B1BA1B20400663620 /* NewRemindViewController.xib */,
+			);
+			name = AboutMe;
+			sourceTree = "<group>";
+		};
+		D34ED0AB1BB034C400DE2B8A /* Doctor */ = {
+			isa = PBXGroup;
+			children = (
+				D34ED0AC1BB038B800DE2B8A /* cell */,
+				D3357B3D1BAAABA800383AE0 /* SearchFriendsViewController.h */,
+				D3357B3E1BAAABA800383AE0 /* SearchFriendsViewController.m */,
+				D3357B3F1BAAABA800383AE0 /* SearchFriendsViewController.xib */,
+				D3357B421BAABB1200383AE0 /* FriendsDetailViewController.h */,
+				D3357B431BAABB1200383AE0 /* FriendsDetailViewController.m */,
+				D3357B441BAABB1200383AE0 /* FriendsDetailViewController.xib */,
+				6FBEEC331B9C313400D5D258 /* FriendsViewController.h */,
+				6FBEEC341B9C313400D5D258 /* FriendsViewController.m */,
+				6FBEEC351B9C313400D5D258 /* FriendsViewController.xib */,
+				D34ED0991BB01FCB00DE2B8A /* ChatViewController.h */,
+				D34ED09A1BB01FCB00DE2B8A /* ChatViewController.m */,
+				D34ED09B1BB01FCB00DE2B8A /* ChatViewController.xib */,
+				D34ED0BB1BB2AB8800DE2B8A /* NewFriendsViewController.h */,
+				D34ED0BC1BB2AB8800DE2B8A /* NewFriendsViewController.m */,
+				D34ED0BD1BB2AB8800DE2B8A /* NewFriendsViewController.xib */,
+			);
+			name = Doctor;
+			sourceTree = "<group>";
+		};
+		D34ED0AC1BB038B800DE2B8A /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D34ED0AD1BB038D000DE2B8A /* MsgReceiveCell.h */,
+				D34ED0AE1BB038D000DE2B8A /* MsgReceiveCell.m */,
+				D34ED0B01BB038D000DE2B8A /* MsgSendCell.h */,
+				D34ED0B11BB038D000DE2B8A /* MsgSendCell.m */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1871,7 +1969,9 @@
 				6FC2924B1B9C73BC0070C902 /* MessageViewController.xib in Resources */,
 				6FBEEC161B9BE03F00D5D258 /* LoginViewController.xib in Resources */,
 				D348AEA31BA3B856006AE53E /* arrow_right.png in Resources */,
+				D34ED0BF1BB2AB8800DE2B8A /* NewFriendsViewController.xib in Resources */,
 				6F70062D1BA16DE400663620 /* account_security.png in Resources */,
+				D34ED0B81BB2829900DE2B8A /* BlueBubble2.png in Resources */,
 				D3357B011BA434C800383AE0 /* login_bg0.png in Resources */,
 				D3357B071BA6795300383AE0 /* Images.xcassets in Resources */,
 				6FC4E68F1B9FCE4B00096C57 /* zixun_erke_icon_btn.png in Resources */,
@@ -1883,6 +1983,7 @@
 				D3357B311BA690AC00383AE0 /* yuyue_blue.png in Resources */,
 				6FC4E6A81B9FD23000096C57 /* zixun_zhongliuke_icon_btn.png in Resources */,
 				6FC4E6AC1B9FD2B300096C57 /* zixun_jieduke_icon_btn.png in Resources */,
+				D34ED09D1BB01FCB00DE2B8A /* ChatViewController.xib in Resources */,
 				6FC4E6A01B9FD16B00096C57 /* zixun_yanke_icon_btn.png in Resources */,
 				D348AE8F1BA3B7FA006AE53E /* arrow_right.png in Resources */,
 				6FC4E6961B9FD02B00096C57 /* zixun_gushangke_icon_btn.png in Resources */,
@@ -1891,11 +1992,9 @@
 				6F41F5AD1B9E85CA00BA6D31 /* fire1.jpg in Resources */,
 				D3357B391BA83AA700383AE0 /* HistoryPatientViewController.xib in Resources */,
 				6FC4E6AD1B9FD2B300096C57 /* zixun_jiyinke_icon_btn.png in Resources */,
-				6FC1E9B21BA02CB30067864F /* AdvertisementViewController.xib in Resources */,
 				6F70062B1BA16DD000663620 /* erweima.png in Resources */,
 				6F70062F1BA16DF000663620 /* about@2x.png in Resources */,
 				6FBEEC321B9C310F00D5D258 /* ConsultViewController.xib in Resources */,
-				6FC4EEA51BA277DD0033CA74 /* NearbyHospitalViewController.xib in Resources */,
 				6F7006331BA16E5600663620 /* userheader_icon.png in Resources */,
 				D348AEA61BA3B856006AE53E /* friend_gray.png in Resources */,
 				6FC6E48B1B9ED9E4008E1A07 /* mode33.png in Resources */,
@@ -1909,6 +2008,7 @@
 				6F41F5A31B9E758000BA6D31 /* yishengzixun.png in Resources */,
 				6FBEEC3C1B9C316600D5D258 /* AboutMyViewController.xib in Resources */,
 				6FBEEBF81B9BDFF400D5D258 /* Main.storyboard in Resources */,
+				D34ED0BA1BB282A200DE2B8A /* GreenBubble2.png in Resources */,
 				D3357B031BA673E400383AE0 /* blue.png in Resources */,
 				6F7006291BA16D9200663620 /* me_bg.png in Resources */,
 				6F41F5AA1B9E85CA00BA6D31 /* fire4.png in Resources */,
@@ -1968,6 +2068,7 @@
 				D34ED0261BAEA2FD00DE2B8A /* XMPPFileTransfer.m in Sources */,
 				D34ED0301BAEA2FD00DE2B8A /* XMPPUserCoreDataStorageObject.m in Sources */,
 				D34ED08C1BAEA2FD00DE2B8A /* XMPPSRVResolver.m in Sources */,
+				D34ED0A41BB02EC800DE2B8A /* Static.m in Sources */,
 				D34ED08A1BAEA2FD00DE2B8A /* RFImageToDataTransformer.m in Sources */,
 				6F7006371BA1817A00663620 /* ChangePasswordViewController.m in Sources */,
 				D34ED02A1BAEA2FD00DE2B8A /* XMPPProcessOne.m in Sources */,
@@ -2007,8 +2108,8 @@
 				D34ED02F1BAEA2FD00DE2B8A /* XMPPRosterCoreDataStorage.m in Sources */,
 				D34ED0521BAEA2FD00DE2B8A /* XMPPvCardTempBase.m in Sources */,
 				D34ED0311BAEA2FD00DE2B8A /* XMPPResourceMemoryStorageObject.m in Sources */,
-				6FC4EEA41BA277DD0033CA74 /* NearbyHospitalViewController.m in Sources */,
 				D34ED0831BAEA2FD00DE2B8A /* NSXMLElement+XEP_0297.m in Sources */,
+				D34ED0A01BB02DE800DE2B8A /* Message.m in Sources */,
 				D34ED02E1BAEA2FD00DE2B8A /* XMPPRoster.xcdatamodel in Sources */,
 				D34ED0361BAEA2FD00DE2B8A /* XMPPIQ+JabberRPC.m in Sources */,
 				D34ED0451BAEA2FD00DE2B8A /* XMPPRoomMessageMemoryStorageObject.m in Sources */,
@@ -2020,7 +2121,6 @@
 				D34ED0761BAEA2FD00DE2B8A /* XMPPStreamManagementMemoryStorage.m in Sources */,
 				D34ED0341BAEA2FD00DE2B8A /* XMPPRoster.m in Sources */,
 				D34ED0351BAEA2FD00DE2B8A /* XMPPSystemInputActivityMonitor.m in Sources */,
-				6FC1E9B11BA02CB30067864F /* AdvertisementViewController.m in Sources */,
 				6FBEEBF21B9BDFF400D5D258 /* AppDelegate.mm in Sources */,
 				D3357B451BAABB1200383AE0 /* FriendsDetailViewController.m in Sources */,
 				D34ED0711BAEA2FD00DE2B8A /* XMPPMessage+XEP_0172.m in Sources */,
@@ -2040,6 +2140,7 @@
 				D34ECEB61BAEA2D100DE2B8A /* DDAbstractDatabaseLogger.m in Sources */,
 				6FBEEBEF1B9BDFF400D5D258 /* main.m in Sources */,
 				D34ED0501BAEA2FD00DE2B8A /* XMPPvCardTempAdr.m in Sources */,
+				D34ED0B51BB038D000DE2B8A /* MsgSendCell.m in Sources */,
 				D34ED0691BAEA2FD00DE2B8A /* XMPPCapabilities.m in Sources */,
 				D34ECEC01BAEA2D100DE2B8A /* DDXMLDocument.m in Sources */,
 				D34ED05E1BAEA2FD00DE2B8A /* XMPPRegistration.m in Sources */,
@@ -2073,6 +2174,7 @@
 				D34ED0631BAEA2FD00DE2B8A /* XMPPTransports.m in Sources */,
 				D34ED0851BAEA2FD00DE2B8A /* XMPPMessage+XEP_0333.m in Sources */,
 				D34ED0411BAEA2FD00DE2B8A /* XMPPRoomHybridStorage.m in Sources */,
+				D34ED0B31BB038D000DE2B8A /* MsgReceiveCell.m in Sources */,
 				D34ED06E1BAEA2FD00DE2B8A /* XMPPMessageArchiving.m in Sources */,
 				6FBEEC3B1B9C316600D5D258 /* AboutMyViewController.m in Sources */,
 				D34ED0151BAEA2FC00DE2B8A /* XMPPSCRAMSHA1Authentication.m in Sources */,
@@ -2099,11 +2201,13 @@
 				D34ED04C1BAEA2FD00DE2B8A /* XMPPvCardCoreDataStorage.m in Sources */,
 				D34ED01C1BAEA2FC00DE2B8A /* XMPPElement.m in Sources */,
 				D34ED0431BAEA2FD00DE2B8A /* XMPPRoomOccupantHybridMemoryStorageObject.m in Sources */,
+				D34ED09C1BB01FCB00DE2B8A /* ChatViewController.m in Sources */,
 				D34ED04F1BAEA2FD00DE2B8A /* XMPPvCardTemp.m in Sources */,
 				6F70063C1BA1B20400663620 /* NewRemindViewController.m in Sources */,
 				D34ED0601BAEA2FD00DE2B8A /* XMPPDateTimeProfiles.m in Sources */,
 				D34ED0801BAEA2FD00DE2B8A /* XMPPMessage+XEP_0224.m in Sources */,
 				D34ED0701BAEA2FD00DE2B8A /* XMPPvCardAvatarModule.m in Sources */,
+				D34ED0BE1BB2AB8800DE2B8A /* NewFriendsViewController.m in Sources */,
 				D34ED0421BAEA2FD00DE2B8A /* XMPPRoomMessageHybridCoreDataStorageObject.m in Sources */,
 				D34ED03A1BAEA2FD00DE2B8A /* XMPPLastActivity.m in Sources */,
 				D34ED0791BAEA2FD00DE2B8A /* XMPPAutoPing.m in Sources */,
@@ -2261,6 +2365,12 @@
 					"$(PROJECT_DIR)/Mobile",
 					Medical,
 					Treatment/libidn,
+					"$(PROJECT_DIR)/Mobile",
+					Medical,
+					Treatment/libidn,
+					"$(PROJECT_DIR)/Mobile",
+					Medical,
+					Treatment/libidn,
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2286,6 +2396,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/Release-iphoneos",
 					"$(PROJECT_DIR)/lib/Release-iphonesimulator",
+					"$(PROJECT_DIR)/Mobile",
+					Medical,
+					Treatment/libidn,
+					"$(PROJECT_DIR)/Mobile",
+					Medical,
+					Treatment/libidn,
 					"$(PROJECT_DIR)/Mobile",
 					Medical,
 					Treatment/libidn,

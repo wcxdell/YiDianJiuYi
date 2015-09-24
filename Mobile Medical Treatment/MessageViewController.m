@@ -7,7 +7,6 @@
 //
 
 #import "MessageViewController.h"
-#import "AdvertisementViewController.h"
 #import "AppDelegate.h"
 
 @interface MessageViewController ()

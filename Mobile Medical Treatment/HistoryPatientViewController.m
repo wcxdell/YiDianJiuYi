@@ -60,6 +60,7 @@
     {
         //        NSLog(@"%ld",row);
         cell = [[PatientTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
         //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         //        cell.textLabel.font = [UIFont systemFontOfSize:17.0];
         //        cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
@@ -78,7 +79,7 @@
             cell.sex.textColor = [UIColor redColor];
         }
         cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"blue.png"] toSize:CGSizeMake(40,40)];
-    }
+
     return cell;
 
 

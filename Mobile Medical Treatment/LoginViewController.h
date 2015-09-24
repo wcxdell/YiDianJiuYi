@@ -16,5 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 - (IBAction)login:(id)sender;
 
+@property (nonatomic,strong) NSMutableArray *friends;
+
+
 
 @end
