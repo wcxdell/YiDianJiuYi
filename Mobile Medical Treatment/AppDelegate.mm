@@ -14,7 +14,7 @@
 #import "FriendsViewController.h"
 #import "AboutMyViewController.h"
 
-NSString *const SERVER = @"127.0.0.1";
+
 
 @interface AppDelegate ()
 
@@ -66,6 +66,7 @@ NSString *const SERVER = @"127.0.0.1";
 //    }
     
     [self.window makeKeyAndVisible];
+    
     
 //    xmppRoster.autoAcceptKnownPresenceSubscriptionRequests = YES;
     
@@ -195,29 +196,25 @@ NSString *const SERVER = @"127.0.0.1";
     [[self xmppStream] sendElement:presence];
 }
 
-- (BOOL)connect {
+- (BOOL)connect{
     
     [self setupStream];
     
-    //    [[NSUserDefaults standardUserDefaults] setObject:@"5@127.0.0.1" forKey:@"userID"];
-    //    [[NSUserDefaults standardUserDefaults] setObject:@"5" forKey:@"userPassword"];
-    //
-    //    NSString *jabberID = [[NSUserDefaults standardUserDefaults] stringForKey:@"userID"];
-    //    NSString *myPassword = [[NSUserDefaults standardUserDefaults] stringForKey:@"userPassword"];
+//        [[NSUserDefaults standardUserDefaults] setObject:@"1@127.0.0.1" forKey:USERID];
+//        [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:PASSWORD];
+    
+        NSString *jabberID = [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"];
+    jabberID = [NSString stringWithFormat:@"%@@%@",jabberID,@"127.0.0.1"];
+        NSString *myPassword = [[NSUserDefaults standardUserDefaults] stringForKey:@"passWord"];
     
     
     if (![xmppStream isDisconnected]) {
         return YES;
     }
     
-    //    if (jabberID == nil || myPassword == nil) {
-    //
-    //        return NO;
-    //    }
-    
-    [xmppStream setMyJID:[XMPPJID jidWithString:@"1@127.0.0.1"]];
+    [xmppStream setMyJID:[XMPPJID jidWithString:jabberID]];
     [xmppStream setHostName:@"127.0.0.1"];
-    password = @"1";
+    password = myPassword;
     
     NSError *error = nil;
     if (![xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error])
@@ -242,8 +239,6 @@ NSString *const SERVER = @"127.0.0.1";
     [xmppStream disconnect];
 }
 
-
-
 - (void)xmppStreamDidConnect:(XMPPStream *)sender{
     
     isOpen = YES;
@@ -258,6 +253,11 @@ NSString *const SERVER = @"127.0.0.1";
     [self goOnline];
     [xmppRoster activate:xmppStream];
     [xmppRoster addDelegate:self delegateQueue:dispatch_get_main_queue()];
+    [self loginSuccessfulCompleteBlock:{}];
+}
+- (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error{
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"登陆失败" message:@"用户名密码错误" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 //接收好友状态
@@ -287,12 +287,12 @@ NSString *const SERVER = @"127.0.0.1";
         //在线状态
         if ([presenceType isEqualToString:@"available"]) {
             
-            [self newFriendsOnline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, SERVER]];
+            [self newFriendsOnline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"127.0.0.1"]];
             [self.friendsListDelegate passValue];
             
         }else if ([presenceType isEqualToString:@"unavailable"]) {
 
-            [self friendsWentOffline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, SERVER]];
+            [self friendsWentOffline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"127.0.0.1"]];
             [self.friendsListDelegate passValue];
         }
         
@@ -358,7 +358,7 @@ NSString *const SERVER = @"127.0.0.1";
     
     NSLog(@"111111111");
     
-    XMPPJID *jid = [XMPPJID jidWithString:[NSString stringWithFormat:@"%@@%@", presenceFromUser,SERVER]];
+    XMPPJID *jid = [XMPPJID jidWithString:[NSString stringWithFormat:@"%@@%@", presenceFromUser,@"127.0.0.1"]];
     [xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];
 //    [xmppRoster rejectPresenceSubscriptionRequestFrom:jid];
     

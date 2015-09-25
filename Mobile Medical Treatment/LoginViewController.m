@@ -101,11 +101,20 @@
     [self.navigationController pushViewController:registViewController animated:YES];
 }
 - (IBAction)login:(id)sender {
-//    MainViewController *mainViewController = [[MainViewController alloc]init];
-//    [self.navigationController pushViewController:mainViewController animated:YES];
-    [(AppDelegate *)[UIApplication sharedApplication].delegate loginSuccessfulCompleteBlock:^{
-        
-    }];
+    
+    AppDelegate * appDelegate = [self appDelegate];
+    NSString * account = [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"];
+    if (account != NULL&&![account  isEqual: @""]) {
+        [appDelegate connect];
+    }
+    else{
+        if(self.accountTextField.text!=nil && self.passwordTextField.text != nil){
+            [[NSUserDefaults standardUserDefaults]setObject:self.accountTextField.text forKey:@"userId"];
+            [[NSUserDefaults standardUserDefaults]setObject:self.passwordTextField.text forKey:@"passWord"];
+        }
+        [appDelegate connect];
+    }
+    
 }
 
 

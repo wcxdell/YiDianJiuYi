@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+//NSString *const CSERVER = @"127.0.0.1";
+//NSString *const CUSERID = @"userID";
+//NSString *const CPASSWORD = @"passWord";
+
 @interface Static : NSObject
 
 +(NSString *)getCurrentTime;
