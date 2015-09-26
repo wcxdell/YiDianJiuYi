@@ -11,6 +11,7 @@
 #import "SearchFriendsViewController.h"
 #import "AppDelegate.h"
 #import "NewFriendsViewController.h"
+#import "Friend.h"
 @interface FriendsViewController ()
 
 @end
@@ -72,10 +73,14 @@
     if (cell == nil)
     {
         //        NSLog(@"%ld",row);
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-        cell.textLabel.text = self.friends[row];
-        cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"blue.png"] toSize:CGSizeMake(40,40)];
+    Friend * doctorFriend = [[Friend alloc]init];
+    doctorFriend = self.friends[row];
+    
+        cell.textLabel.text = doctorFriend.name;
+        cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"default_icon.png"] toSize:CGSizeMake(40,40)];
+    cell.detailTextLabel.text = doctorFriend.presenceType;
     return cell;
 }
 
@@ -96,7 +101,9 @@
     
     //start a Chat
     ChatViewController *chatController = [[ChatViewController alloc]initWithNibName:@"ChatViewController" bundle:nil];
-    chatController.chatUser = (NSString *)[self.friends objectAtIndex:indexPath.row];
+    Friend * doctorFriend = [[Friend alloc]init];
+    doctorFriend = [self.friends objectAtIndex:indexPath.row];
+    chatController.chatUser = doctorFriend.name;
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:chatController animated:YES];
     self.hidesBottomBarWhenPushed = NO;

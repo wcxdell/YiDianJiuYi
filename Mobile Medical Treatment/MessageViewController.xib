@@ -15,13 +15,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Olk-Ep-fpC">
-                    <rect key="frame" x="149" y="269" width="46" height="30"/>
+                    <rect key="frame" x="80" y="62" width="146" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button">
+                    <state key="normal" title="发送好友请求demo">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="addFriends:" destination="-1" eventType="touchUpInside" id="WXL-gm-B66"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gwk-de-5a2">
+                    <rect key="frame" x="85" y="150" width="137" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Coredata demo">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addEntity:" destination="-1" eventType="touchUpInside" id="fhd-Ya-SBq"/>
                     </connections>
                 </button>
             </subviews>

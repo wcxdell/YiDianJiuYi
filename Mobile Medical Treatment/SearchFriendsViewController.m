@@ -73,7 +73,7 @@
     if (isSearch) {
         item = self.searchFriends[row];
         cell.textLabel.text = item.name;
-        cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"blue.png"] toSize:CGSizeMake(40,40)];
+        cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"default_icon.png"] toSize:CGSizeMake(40,40)];
     }else{
 //        item = self.friends[row];
     }

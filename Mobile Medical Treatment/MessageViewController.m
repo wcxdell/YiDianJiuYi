@@ -8,6 +8,7 @@
 
 #import "MessageViewController.h"
 #import "AppDelegate.h"
+#import "Friend.h"
 
 @interface MessageViewController ()
 
@@ -65,6 +66,37 @@
     
     XMPPRoster * xmppRoster = [self xmppRoster];
     [xmppRoster subscribePresenceToUser:jid];
+}
+- (IBAction)addEntity:(id)sender {
+    //add
+    Friend * friend = [NSEntityDescription insertNewObjectForEntityForName:@"Friends" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    friend.name = @"123";
+    friend.presenceType = @"123";
+    
+    NSError * error = nil;
+    
+        if([self.appDelegate.managedObjectContext save:&error]){
+            [[[UIActionSheet alloc] initWithTitle:@"保存成功" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
+        }else{
+            [[[UIActionSheet alloc] initWithTitle:@"保存失败" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
+        }
+    
+    
+    [self fetch];
+    
+}
+//fetch
+-(void)fetch{
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    NSEntityDescription * entity = [NSEntityDescription entityForName:@"Friends" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    [request setEntity:entity];
+    
+    NSError* error = nil;
+    self.friends = [[self.appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    Friend * oc;
+    for(oc in self.friends){
+        NSLog(@"%@",oc.name);
+    }
 }
 
 /*

@@ -45,7 +45,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     cell.textLabel.text = @"123";
-    cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"blue.png"] toSize:CGSizeMake(40,40)];
+    cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"default_icon.png"] toSize:CGSizeMake(40,40)];
     return cell;
 }
 

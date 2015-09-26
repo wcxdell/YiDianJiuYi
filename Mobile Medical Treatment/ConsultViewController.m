@@ -96,7 +96,7 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.font = [UIFont systemFontOfSize:17.0];
             cell.textLabel.text = @"历史病人";
-                cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"blue.png"] toSize:CGSizeMake(40,40)];
+                cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"default_icon.png"] toSize:CGSizeMake(40,40)];
         return cell;
     }
     else if([tableView isEqual:_bottomTableView])
@@ -131,7 +131,7 @@
             cell.sex.text = @"女";
             cell.sex.textColor = [UIColor redColor];
         }
-        cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"blue.png"] toSize:CGSizeMake(40,40)];
+        cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"default_icon.png"] toSize:CGSizeMake(40,40)];
     
         return cell;
     }

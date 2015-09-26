@@ -13,7 +13,8 @@
 #import "ConsultViewController.h"
 #import "FriendsViewController.h"
 #import "AboutMyViewController.h"
-
+#import "Friend.h"
+#import "LoginUser.h"
 
 
 @interface AppDelegate ()
@@ -66,6 +67,7 @@
 //    }
     
     [self.window makeKeyAndVisible];
+//    [self queryRoster];
     
     
 //    xmppRoster.autoAcceptKnownPresenceSubscriptionRequests = YES;
@@ -95,6 +97,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [self saveContext];
 }
 
 - (UITabBarItem *)itemWithTitle:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage
@@ -185,8 +188,7 @@
         xmppRosterCoreDataStorage = [[XMPPRosterCoreDataStorage alloc]init];
         xmppRoster = [[XMPPRoster alloc] initWithRosterStorage:xmppRosterCoreDataStorage];
     }
-    
-    
+//    [xmppRoster fetchRoster];
     
 }
 
@@ -206,7 +208,9 @@
     
     
         NSString *jabberID = [[NSUserDefaults standardUserDefaults] stringForKey:USERID];
+    [LoginUser setUserName:jabberID];
     jabberID = [NSString stringWithFormat:@"%@@%@",jabberID,SERVER];
+    [LoginUser setJid:jabberID];
         NSString *myPassword = [[NSUserDefaults standardUserDefaults] stringForKey:PASSWORD];
     
     
@@ -258,6 +262,7 @@
     [xmppRoster activate:xmppStream];
     [xmppRoster addDelegate:self delegateQueue:dispatch_get_main_queue()];
     [self loginSuccessfulCompleteBlock:{}];
+    [xmppRoster fetchRoster];
 }
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error{
     UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"登陆失败" message:@"用户名密码错误" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -276,27 +281,32 @@
     else{
     
     NSLog(@"presence = %@", presence);
+        
+        Friend * doctorFriend = [[Friend alloc]init];
+        doctorFriend.first = NO;
     
     //取得好友状态
-    NSString *presenceType = [presence type]; //online/offline
+    doctorFriend.presenceType = [presence type]; //online/offline
     //当前用户
     NSString *userId = [[sender myJID] user];
+        userId = [NSString stringWithFormat:@"%@@%@",userId,SERVER];
     //在线用户
-    NSString *presenceFromUser = [[presence from] user];
+    doctorFriend.name = [[presence from] user];
+        doctorFriend.name = [NSString stringWithFormat:@"%@@%@",doctorFriend.name,SERVER];
     
-    NSLog(@"在线好友为：%@",presenceFromUser);
+    NSLog(@"在线好友为：%@",doctorFriend.name);
     
-    if (![presenceFromUser isEqualToString:userId]) {
+    if (![doctorFriend.name isEqualToString:userId]) {
         
         //在线状态
-        if ([presenceType isEqualToString:@"available"]) {
+        if ([doctorFriend.presenceType isEqualToString:@"available"]) {
             
-            [self newFriendsOnline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, SERVER]];
+            [self newFriendsOnline:doctorFriend];
             [self.friendsListDelegate passValue];
             
-        }else if ([presenceType isEqualToString:@"unavailable"]) {
+        }else if ([doctorFriend.presenceType isEqualToString:@"unavailable"]) {
 
-            [self friendsWentOffline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, SERVER]];
+            [self newFriendsOnline:doctorFriend];
             [self.friendsListDelegate passValue];
         }
         
@@ -306,18 +316,27 @@
 }
 
 //在线好友
--(void)newFriendsOnline:(NSString *)friendName{
+-(void)newFriendsOnline:(Friend *)doctorFriend{
     
-    if (![self.friends containsObject:friendName]) {
-        [self.friends addObject:friendName];
+//    if (![self.friends containsObject:doctorFriend]) {
+//        [self.friends addObject:doctorFriend];
+//    }
+    BOOL flag = NO;
+    for (int i=0; i<self.friends.count; i++) {
+        Friend * dFriend = [self.friends objectAtIndex:i];
+        if([dFriend.name isEqualToString:doctorFriend.name]){
+            if (!doctorFriend.first) {
+            [self.friends replaceObjectAtIndex:i withObject:doctorFriend];
+            
+            }
+            flag = YES;
+        }
+    }
+    if(!flag){
+        [self.friends addObject:doctorFriend];
     }
 }
 
-//好友下线
--(void)friendsWentOffline:(NSString *)friendName{
-    
-    [self.friends removeObject:friendName];
-}
 
 //收到消息
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
@@ -366,6 +385,110 @@
     [xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];
 //    [xmppRoster rejectPresenceSubscriptionRequestFrom:jid];
     
+}
+
+
+//getRoster
+- (BOOL)xmppStream:(XMPPStream *)sender didReceiveIQ:(XMPPIQ *)iq {
+    if ([@"result" isEqualToString:iq.type]) {
+        NSXMLElement *query = iq.childElement;
+        if ([@"query" isEqualToString:query.name]) {
+            NSArray *items = [query children];
+            
+            for (NSXMLElement *item in items) {
+                NSString *jid = [item attributeStringValueForName:@"jid"];
+                Friend * doctorFriend = [[Friend alloc]init];
+                doctorFriend.first = YES;
+                doctorFriend.name = jid;
+                doctorFriend.presenceType = @"unavailable";
+                [self newFriendsOnline:doctorFriend];
+                
+            }
+        }
+    }
+    return YES;
+}
+
+
+#pragma mark - Core Data stack
+
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+- (NSURL *)applicationDocumentsDirectory {
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "wcx.noteBook" in the application's documents directory.
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (NSManagedObjectModel *)managedObjectModel {
+    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Medical" withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it.
+    if (_persistentStoreCoordinator != nil) {
+        return _persistentStoreCoordinator;
+    }
+    
+    // Create the coordinator and store
+    
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Medical.sqlite"];
+    //    NSLog(@"%@",storeURL);
+    NSError *error = nil;
+    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+        // Report any error we got.
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
+        dict[NSLocalizedFailureReasonErrorKey] = failureReason;
+        dict[NSUnderlyingErrorKey] = error;
+        error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+        // Replace this with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return _persistentStoreCoordinator;
+}
+
+
+- (NSManagedObjectContext *)managedObjectContext {
+    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
+    if (_managedObjectContext != nil) {
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (!coordinator) {
+        return nil;
+    }
+    _managedObjectContext = [[NSManagedObjectContext alloc] init];
+    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    return _managedObjectContext;
+}
+
+#pragma mark - Core Data Saving support
+
+- (void)saveContext {
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext != nil) {
+        NSError *error = nil;
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
 }
 
 
