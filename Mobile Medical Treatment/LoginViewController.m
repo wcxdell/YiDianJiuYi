@@ -48,14 +48,11 @@
     
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    self.navigationController.navigationBarHidden = NO;
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBarHidden = YES;
+    
 }
 
 //- (void)keyboardHide:(UITapGestureRecognizer *)tap
@@ -101,20 +98,16 @@
     [self.navigationController pushViewController:registViewController animated:YES];
 }
 - (IBAction)login:(id)sender {
-    
     AppDelegate * appDelegate = [self appDelegate];
-    NSString * account = [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"];
-    if (account != NULL&&![account  isEqual: @""]) {
+        if(![self.accountTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]){
+            [[NSUserDefaults standardUserDefaults]setObject:self.accountTextField.text forKey:USERID];
+            [[NSUserDefaults standardUserDefaults]setObject:self.passwordTextField.text forKey:PASSWORD];
         [appDelegate connect];
-    }
-    else{
-        if(self.accountTextField.text!=nil && self.passwordTextField.text != nil){
-            [[NSUserDefaults standardUserDefaults]setObject:self.accountTextField.text forKey:@"userId"];
-            [[NSUserDefaults standardUserDefaults]setObject:self.passwordTextField.text forKey:@"passWord"];
+
+        }else{
+            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"请输入用户名和密码" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
         }
-        [appDelegate connect];
-    }
-    
 }
 
 

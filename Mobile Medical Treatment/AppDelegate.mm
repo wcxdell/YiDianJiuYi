@@ -89,7 +89,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [self connect];
+//    [self connect];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
@@ -179,9 +179,13 @@
 {
     xmppStream = [[XMPPStream alloc]init];
     [xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
+    if(xmppRosterCoreDataStorage){
+        xmppRoster = [[XMPPRoster alloc] initWithRosterStorage:xmppRosterCoreDataStorage];
+    }else{
+        xmppRosterCoreDataStorage = [[XMPPRosterCoreDataStorage alloc]init];
+        xmppRoster = [[XMPPRoster alloc] initWithRosterStorage:xmppRosterCoreDataStorage];
+    }
     
-    xmppRosterCoreDataStorage = [[XMPPRosterCoreDataStorage alloc]init];
-    xmppRoster = [[XMPPRoster alloc] initWithRosterStorage:xmppRosterCoreDataStorage];
     
     
 }
@@ -200,12 +204,10 @@
     
     [self setupStream];
     
-//        [[NSUserDefaults standardUserDefaults] setObject:@"1@127.0.0.1" forKey:USERID];
-//        [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:PASSWORD];
     
-        NSString *jabberID = [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"];
-    jabberID = [NSString stringWithFormat:@"%@@%@",jabberID,@"127.0.0.1"];
-        NSString *myPassword = [[NSUserDefaults standardUserDefaults] stringForKey:@"passWord"];
+        NSString *jabberID = [[NSUserDefaults standardUserDefaults] stringForKey:USERID];
+    jabberID = [NSString stringWithFormat:@"%@@%@",jabberID,SERVER];
+        NSString *myPassword = [[NSUserDefaults standardUserDefaults] stringForKey:PASSWORD];
     
     
     if (![xmppStream isDisconnected]) {
@@ -213,7 +215,7 @@
     }
     
     [xmppStream setMyJID:[XMPPJID jidWithString:jabberID]];
-    [xmppStream setHostName:@"127.0.0.1"];
+    [xmppStream setHostName:SERVER];
     password = myPassword;
     
     NSError *error = nil;
@@ -232,6 +234,8 @@
     
     return YES;
 }
+
+
 
 - (void)disconnect
 {
@@ -287,12 +291,12 @@
         //在线状态
         if ([presenceType isEqualToString:@"available"]) {
             
-            [self newFriendsOnline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"127.0.0.1"]];
+            [self newFriendsOnline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, SERVER]];
             [self.friendsListDelegate passValue];
             
         }else if ([presenceType isEqualToString:@"unavailable"]) {
 
-            [self friendsWentOffline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"127.0.0.1"]];
+            [self friendsWentOffline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, SERVER]];
             [self.friendsListDelegate passValue];
         }
         
@@ -358,7 +362,7 @@
     
     NSLog(@"111111111");
     
-    XMPPJID *jid = [XMPPJID jidWithString:[NSString stringWithFormat:@"%@@%@", presenceFromUser,@"127.0.0.1"]];
+    XMPPJID *jid = [XMPPJID jidWithString:[NSString stringWithFormat:@"%@@%@", presenceFromUser,SERVER]];
     [xmppRoster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];
 //    [xmppRoster rejectPresenceSubscriptionRequestFrom:jid];
     

@@ -11,6 +11,9 @@
 //NSString *const CSERVER = @"127.0.0.1";
 //NSString *const CUSERID = @"userID";
 //NSString *const CPASSWORD = @"passWord";
+#define USERID @"userId"
+#define PASSWORD @"passWord"
+#define SERVER @"127.0.0.1"
 
 @interface Static : NSObject
 

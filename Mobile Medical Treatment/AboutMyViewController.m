@@ -116,6 +116,7 @@
 - (IBAction)quitApp:(id)sender {
      LoginViewController *loginViewController = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [delegate disconnect];
     delegate.navigationController = [[UINavigationController alloc]initWithRootViewController:loginViewController];
     [(UIWindow*)([[UIApplication sharedApplication].windows objectAtIndex:0]) setRootViewController:delegate.navigationController];
 
