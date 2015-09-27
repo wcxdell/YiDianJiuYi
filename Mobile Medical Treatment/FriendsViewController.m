@@ -61,12 +61,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.friends.count;
+    AppDelegate * appDelegate = [self appDelegate];
+    return appDelegate.friends.count;
 //        return [self.functionType count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    AppDelegate * appDelegate = [self appDelegate];
     NSInteger row = indexPath.row;
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -76,7 +78,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     Friend * doctorFriend = [[Friend alloc]init];
-    doctorFriend = self.friends[row];
+    doctorFriend = appDelegate.friends[row];
     
         cell.textLabel.text = doctorFriend.name;
         cell.imageView.image = [MessageViewController scale:[UIImage imageNamed:@"default_icon.png"] toSize:CGSizeMake(40,40)];
@@ -91,8 +93,8 @@
 
 
 -(void)passValue{
-    AppDelegate * appDelegate = [self appDelegate];
-    self.friends = [NSMutableArray arrayWithArray:appDelegate.friends];
+//    AppDelegate * appDelegate = [self appDelegate];
+//    self.friends = [NSMutableArray arrayWithArray:appDelegate.friends];
     [self.tableView reloadData];
 }
 
@@ -100,9 +102,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     //start a Chat
+    AppDelegate * appDelegate = [self appDelegate];
     ChatViewController *chatController = [[ChatViewController alloc]initWithNibName:@"ChatViewController" bundle:nil];
     Friend * doctorFriend = [[Friend alloc]init];
-    doctorFriend = [self.friends objectAtIndex:indexPath.row];
+    doctorFriend = [appDelegate.friends objectAtIndex:indexPath.row];
     chatController.chatUser = doctorFriend.name;
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:chatController animated:YES];

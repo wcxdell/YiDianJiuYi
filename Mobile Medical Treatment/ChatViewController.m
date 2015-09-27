@@ -85,12 +85,21 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"%ld",self.messages.count);
+//    NSLog(@"%ld",self.messages.count);
+//    AppDelegate * appDelegate = [self appDelegate];
+    
+//    AppDelegate * appDelegate = [self appDelegate];
+    NSString * strSelf = @"You";
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(strFromUsername contains %@ && strToUsername contains %@) ||strFromUsername contains %@",strSelf,self.title,self.title];
+    
+    
+    [self.messages filterUsingPredicate:predicate];
     return self.messages.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Message* mess = [self.messages objectAtIndex:indexPath.row];
+    AppDelegate * appDelegate = [self appDelegate];
+    Message* mess = [appDelegate.messages objectAtIndex:indexPath.row];
     
     NSString * msg = mess.strText;
     CGSize textSize = {260.0 , 10000.0};
@@ -104,7 +113,11 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    AppDelegate * appDelegate = [self appDelegate];
+    NSString * strSelf = @"You";
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(strFromUsername contains %@ && strToUsername contains %@) ||strFromUsername contains %@",strSelf,self.title,self.title];
     
+    [self.messages filterUsingPredicate:predicate];
 
     Message *mes = [self.messages objectAtIndex:indexPath.row];
     
