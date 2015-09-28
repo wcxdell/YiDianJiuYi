@@ -265,6 +265,7 @@
 		D3FCBEB91BB7B58C00AAEFC5 /* BlueBubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FCBEB81BB7B58C00AAEFC5 /* BlueBubble2.png */; };
 		D3FCBEBB1BB7B59A00AAEFC5 /* GreenBubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FCBEBA1BB7B59A00AAEFC5 /* GreenBubble2.png */; };
 		D3FCBEBC1BB7C5C000AAEFC5 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ECEB31BAEA2D100DE2B8A /* libidn.a */; };
+		D3FCBEBE1BB96E8E00AAEFC5 /* news_friends_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FCBEBD1BB96E8E00AAEFC5 /* news_friends_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -718,6 +719,7 @@
 		D3FCBEB61BB6872700AAEFC5 /* LoginUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUser.m; sourceTree = "<group>"; };
 		D3FCBEB81BB7B58C00AAEFC5 /* BlueBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueBubble2.png; sourceTree = "<group>"; };
 		D3FCBEBA1BB7B59A00AAEFC5 /* GreenBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenBubble2.png; sourceTree = "<group>"; };
+		D3FCBEBD1BB96E8E00AAEFC5 /* news_friends_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news_friends_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -812,6 +814,7 @@
 		6FC2922C1B9C5D8A0070C902 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				D3FCBEBD1BB96E8E00AAEFC5 /* news_friends_icon.png */,
 				D3FCBEA91BB6645A00AAEFC5 /* default_icon.png */,
 				D34ED0B71BB2829900DE2B8A /* BlueBubble21.png */,
 				D34ED0B91BB282A200DE2B8A /* GreenBubble21.png */,
@@ -2011,6 +2014,7 @@
 				6FC4E6A81B9FD23000096C57 /* zixun_zhongliuke_icon_btn.png in Resources */,
 				6FC4E6AC1B9FD2B300096C57 /* zixun_jieduke_icon_btn.png in Resources */,
 				D34ED09D1BB01FCB00DE2B8A /* ChatViewController.xib in Resources */,
+				D3FCBEBE1BB96E8E00AAEFC5 /* news_friends_icon.png in Resources */,
 				6FC4E6A01B9FD16B00096C57 /* zixun_yanke_icon_btn.png in Resources */,
 				D348AE8F1BA3B7FA006AE53E /* arrow_right.png in Resources */,
 				6FC4E6961B9FD02B00096C57 /* zixun_gushangke_icon_btn.png in Resources */,

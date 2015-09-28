@@ -21,16 +21,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gDK-5P-SMy" userLabel="BottomTableView">
+                    <rect key="frame" x="0.0" y="114" width="375" height="553"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6SZ-xS-XFw" userLabel="TopTableView">
-                    <rect key="frame" x="0.0" y="44" width="375" height="80"/>
+                    <rect key="frame" x="0.0" y="44" width="375" height="60"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="FcL-p0-E3x"/>
+                        <constraint firstAttribute="height" constant="60" id="FcL-p0-E3x"/>
                     </constraints>
-                </tableView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gDK-5P-SMy" userLabel="BottomTableView">
-                    <rect key="frame" x="0.0" y="144" width="375" height="523"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,7 +38,7 @@
                 <constraint firstAttribute="trailing" secondItem="rYx-Dk-5hJ" secondAttribute="trailing" id="5uK-0e-cnv"/>
                 <constraint firstItem="6SZ-xS-XFw" firstAttribute="top" secondItem="rYx-Dk-5hJ" secondAttribute="bottom" id="QQv-hz-A0n"/>
                 <constraint firstAttribute="bottom" secondItem="gDK-5P-SMy" secondAttribute="bottom" id="Sxb-uK-Mov"/>
-                <constraint firstItem="6SZ-xS-XFw" firstAttribute="top" secondItem="gDK-5P-SMy" secondAttribute="top" constant="-100" id="Tsa-rU-Vhn"/>
+                <constraint firstItem="6SZ-xS-XFw" firstAttribute="top" secondItem="gDK-5P-SMy" secondAttribute="top" constant="-70" id="Tsa-rU-Vhn"/>
                 <constraint firstItem="rYx-Dk-5hJ" firstAttribute="leading" secondItem="6SZ-xS-XFw" secondAttribute="leading" id="b0r-fZ-yiX"/>
                 <constraint firstItem="6SZ-xS-XFw" firstAttribute="trailing" secondItem="gDK-5P-SMy" secondAttribute="trailing" id="byY-FZ-vEr"/>
                 <constraint firstItem="6SZ-xS-XFw" firstAttribute="leading" secondItem="gDK-5P-SMy" secondAttribute="leading" id="ft2-i1-8NC"/>

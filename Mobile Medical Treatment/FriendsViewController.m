@@ -26,7 +26,7 @@
     AppDelegate* appDelegate = [self appDelegate];
     appDelegate.friendsListDelegate = self;
     
-    self.friendsNew.backgroundColor = [UIColor lightGrayColor];
+    self.friendsNew.backgroundColor = [UIColor whiteColor];
     
     
     [self passValue];
