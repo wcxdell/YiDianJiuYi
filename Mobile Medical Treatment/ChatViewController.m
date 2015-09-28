@@ -24,7 +24,7 @@
     self.title = self.chatUser;
     AppDelegate * appDelegate = [self appDelegate];
     appDelegate.messageListDelegate = self;
-    
+    //线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self passMessage];
@@ -103,13 +103,17 @@
     
     NSString * msg = mess.strText;
     CGSize textSize = {260.0 , 10000.0};
-    CGSize size = [msg sizeWithFont:[UIFont boldSystemFontOfSize:13] constrainedToSize:textSize lineBreakMode:UILineBreakModeWordWrap];
+//    CGSize size = [msg sizeWithFont:[UIFont boldSystemFontOfSize:13] constrainedToSize:textSize lineBreakMode:UILineBreakModeWordWrap];
     
-    size.height += padding*2;
+    NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:13]};
+    CGSize size= [msg boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
+//    NSLog(@"%f",size.height);
     
-    CGFloat height = size.height < 65 ? 65 : size.height;
+    size.height += padding*3;
     
-    return height;
+//    CGFloat height = size.height < 65 ? 65 : size.height;
+    
+    return size.height;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -122,7 +126,9 @@
     Message *mes = [self.messages objectAtIndex:indexPath.row];
     
     CGSize textSize = {260.0 ,10000.0};
-    CGSize size = [mes.strText sizeWithFont:[UIFont boldSystemFontOfSize:13] constrainedToSize:textSize lineBreakMode:UILineBreakModeWordWrap];
+    NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:13]};
+    CGSize size= [mes.strText boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
+//    CGSize size = [mes.strText sizeWithFont:[UIFont boldSystemFontOfSize:13] constrainedToSize:textSize lineBreakMode:UILineBreakModeWordWrap];
     
     size.width +=(padding/2);
     
@@ -139,17 +145,17 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.userInteractionEnabled = NO;
         
-        bgImage = [[UIImage imageNamed:@"BlueBubble2.png"] stretchableImageWithLeftCapWidth:14 topCapHeight:15];
+        bgImage = [[UIImage imageNamed:@"BlueBubble2.png"] stretchableImageWithLeftCapWidth:16
+                                                                               topCapHeight:13];
         
+        [cell.messageContentView setFrame:CGRectMake(padding, padding*1.3, size.width, size.height+padding)];
         
-        [cell.messageContentView setFrame:CGRectMake(padding, padding*2, size.width, size.height+padding)];
-        
-        [cell.bgImageView setFrame:CGRectMake(cell.messageContentView.frame.origin.x - padding/2, cell.messageContentView.frame.origin.y-padding/2, size.width + padding, size.height + padding)];
+        [cell.bgImageView setFrame:CGRectMake(cell.messageContentView.frame.origin.x - padding/2, padding*1.1, size.width + padding, size.height + padding)];
         
         
         
         cell.bgImageView.image = bgImage;
-        cell.senderAndTimeLabel.text = [NSString stringWithFormat:@"%@ %@", mes.strFromUsername, mes.strTime];
+        cell.senderAndTimeLabel.text = [NSString stringWithFormat:@"%@",mes.strTime];
         
         
         
@@ -166,16 +172,19 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.userInteractionEnabled = NO;
         
-        bgImage = [[UIImage imageNamed:@"GreenBubble2.png"] stretchableImageWithLeftCapWidth:14 topCapHeight:15];
+        bgImage = [[UIImage imageNamed:@"GreenBubble2.png"] stretchableImageWithLeftCapWidth:14 topCapHeight:10];
+//        bgImage = [[UIImage imageNamed:@"GreenBubble2.png"] resizableImageWithCapInsets:];
         
         
         
-        [cell.messageContentView setFrame:CGRectMake(self.view.bounds.size.width-size.width - padding, padding*2, size.width, size.height+padding)];
+        [cell.messageContentView setFrame:CGRectMake(self.view.bounds.size.width-size.width - padding, 1.3*padding, size.width, size.height+padding)];
+//        NSLog(@"%f",self.view.bounds.size.width);
+//        NSLog(@"%f",size.width);
         
-        [cell.bgImageView setFrame:CGRectMake(cell.messageContentView.frame.origin.x - padding/2, cell.messageContentView.frame.origin.y - padding/2, size.width + padding, size.height + padding)];
+        [cell.bgImageView setFrame:CGRectMake(cell.messageContentView.frame.origin.x - padding/2, padding*1.1, size.width + padding, size.height + padding)];
         
         cell.bgImageView.image = bgImage;
-        cell.senderAndTimeLabel.text = [NSString stringWithFormat:@"%@ %@", @"you", mes.strTime];
+        cell.senderAndTimeLabel.text = [NSString stringWithFormat:@"%@", mes.strTime];
         return cell;
     }
     return nil;

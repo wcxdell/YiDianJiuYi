@@ -8,6 +8,8 @@
 
 #import "MsgSendCell.h"
 
+#define padding 20
+
 @implementation MsgSendCell
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -44,7 +46,6 @@
         [self.contentView addSubview:self.messageContentView];
         
     }
-    
     return self;
     
 }

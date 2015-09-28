@@ -253,16 +253,18 @@
 		D34ED0A41BB02EC800DE2B8A /* Static.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ED0A31BB02EC800DE2B8A /* Static.m */; };
 		D34ED0B31BB038D000DE2B8A /* MsgReceiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ED0AE1BB038D000DE2B8A /* MsgReceiveCell.m */; };
 		D34ED0B51BB038D000DE2B8A /* MsgSendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ED0B11BB038D000DE2B8A /* MsgSendCell.m */; };
-		D34ED0B81BB2829900DE2B8A /* BlueBubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = D34ED0B71BB2829900DE2B8A /* BlueBubble2.png */; };
-		D34ED0BA1BB282A200DE2B8A /* GreenBubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = D34ED0B91BB282A200DE2B8A /* GreenBubble2.png */; };
+		D34ED0B81BB2829900DE2B8A /* BlueBubble21.png in Resources */ = {isa = PBXBuildFile; fileRef = D34ED0B71BB2829900DE2B8A /* BlueBubble21.png */; };
+		D34ED0BA1BB282A200DE2B8A /* GreenBubble21.png in Resources */ = {isa = PBXBuildFile; fileRef = D34ED0B91BB282A200DE2B8A /* GreenBubble21.png */; };
 		D34ED0BE1BB2AB8800DE2B8A /* NewFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ED0BC1BB2AB8800DE2B8A /* NewFriendsViewController.m */; };
 		D34ED0BF1BB2AB8800DE2B8A /* NewFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D34ED0BD1BB2AB8800DE2B8A /* NewFriendsViewController.xib */; };
-		D3FCBEA81BB541C200AAEFC5 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ECEB31BAEA2D100DE2B8A /* libidn.a */; };
 		D3FCBEAA1BB6645A00AAEFC5 /* default_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FCBEA91BB6645A00AAEFC5 /* default_icon.png */; };
 		D3FCBEAD1BB6696300AAEFC5 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCBEAC1BB6696300AAEFC5 /* Friend.m */; };
 		D3FCBEB01BB678A600AAEFC5 /* Medical.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3FCBEAE1BB678A600AAEFC5 /* Medical.xcdatamodeld */; };
 		D3FCBEB41BB67D1500AAEFC5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FCBEB31BB67D1500AAEFC5 /* CoreData.framework */; };
 		D3FCBEB71BB6872700AAEFC5 /* LoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCBEB61BB6872700AAEFC5 /* LoginUser.m */; };
+		D3FCBEB91BB7B58C00AAEFC5 /* BlueBubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FCBEB81BB7B58C00AAEFC5 /* BlueBubble2.png */; };
+		D3FCBEBB1BB7B59A00AAEFC5 /* GreenBubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FCBEBA1BB7B59A00AAEFC5 /* GreenBubble2.png */; };
+		D3FCBEBC1BB7C5C000AAEFC5 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ECEB31BAEA2D100DE2B8A /* libidn.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -702,8 +704,8 @@
 		D34ED0AE1BB038D000DE2B8A /* MsgReceiveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgReceiveCell.m; sourceTree = "<group>"; };
 		D34ED0B01BB038D000DE2B8A /* MsgSendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgSendCell.h; sourceTree = "<group>"; };
 		D34ED0B11BB038D000DE2B8A /* MsgSendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgSendCell.m; sourceTree = "<group>"; };
-		D34ED0B71BB2829900DE2B8A /* BlueBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueBubble2.png; sourceTree = "<group>"; };
-		D34ED0B91BB282A200DE2B8A /* GreenBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenBubble2.png; sourceTree = "<group>"; };
+		D34ED0B71BB2829900DE2B8A /* BlueBubble21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueBubble21.png; sourceTree = "<group>"; };
+		D34ED0B91BB282A200DE2B8A /* GreenBubble21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenBubble21.png; sourceTree = "<group>"; };
 		D34ED0BB1BB2AB8800DE2B8A /* NewFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFriendsViewController.h; sourceTree = "<group>"; };
 		D34ED0BC1BB2AB8800DE2B8A /* NewFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFriendsViewController.m; sourceTree = "<group>"; };
 		D34ED0BD1BB2AB8800DE2B8A /* NewFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewFriendsViewController.xib; sourceTree = "<group>"; };
@@ -714,6 +716,8 @@
 		D3FCBEB31BB67D1500AAEFC5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D3FCBEB51BB6872700AAEFC5 /* LoginUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUser.h; sourceTree = "<group>"; };
 		D3FCBEB61BB6872700AAEFC5 /* LoginUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUser.m; sourceTree = "<group>"; };
+		D3FCBEB81BB7B58C00AAEFC5 /* BlueBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueBubble2.png; sourceTree = "<group>"; };
+		D3FCBEBA1BB7B59A00AAEFC5 /* GreenBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenBubble2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -727,8 +731,8 @@
 				D34ED0931BAEA35300DE2B8A /* Security.framework in Frameworks */,
 				D34ED0911BAEA34A00DE2B8A /* CFNetwork.framework in Frameworks */,
 				6FC693481BA2BDF80023F83D /* QuartzCore.framework in Frameworks */,
-				D3FCBEA81BB541C200AAEFC5 /* libidn.a in Frameworks */,
 				6FC4EEA01BA267730033CA74 /* CoreLocation.framework in Frameworks */,
+				D3FCBEBC1BB7C5C000AAEFC5 /* libidn.a in Frameworks */,
 				6FC4EE9E1BA267650033CA74 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,8 +813,10 @@
 			isa = PBXGroup;
 			children = (
 				D3FCBEA91BB6645A00AAEFC5 /* default_icon.png */,
-				D34ED0B71BB2829900DE2B8A /* BlueBubble2.png */,
-				D34ED0B91BB282A200DE2B8A /* GreenBubble2.png */,
+				D34ED0B71BB2829900DE2B8A /* BlueBubble21.png */,
+				D34ED0B91BB282A200DE2B8A /* GreenBubble21.png */,
+				D3FCBEB81BB7B58C00AAEFC5 /* BlueBubble2.png */,
+				D3FCBEBA1BB7B59A00AAEFC5 /* GreenBubble2.png */,
 				D3357B301BA690AC00383AE0 /* yuyue_blue.png */,
 				D3357B2E1BA6904500383AE0 /* btn_adrpre.jpg */,
 				D3357B0C1BA68A1A00383AE0 /* news_focus.jpg */,
@@ -1991,13 +1997,14 @@
 				D348AEA31BA3B856006AE53E /* arrow_right.png in Resources */,
 				D34ED0BF1BB2AB8800DE2B8A /* NewFriendsViewController.xib in Resources */,
 				6F70062D1BA16DE400663620 /* account_security.png in Resources */,
-				D34ED0B81BB2829900DE2B8A /* BlueBubble2.png in Resources */,
+				D34ED0B81BB2829900DE2B8A /* BlueBubble21.png in Resources */,
 				D3357B011BA434C800383AE0 /* login_bg0.png in Resources */,
 				D3357B071BA6795300383AE0 /* Images.xcassets in Resources */,
 				6FC4E68F1B9FCE4B00096C57 /* zixun_erke_icon_btn.png in Resources */,
 				6FC4E68E1B9FCE4B00096C57 /* zixun_chanke_icon_btn.png in Resources */,
 				6FC4E69F1B9FD16B00096C57 /* zixun_kouke_icon_btn.png in Resources */,
 				6FC4E6901B9FCE4B00096C57 /* zixun_fuke_icon_btn.png in Resources */,
+				D3FCBEBB1BB7B59A00AAEFC5 /* GreenBubble2.png in Resources */,
 				6FC1E9B41BA030070067864F /* tab_background@2x.png in Resources */,
 				6FC6E4911B9EDA04008E1A07 /* mode6.png in Resources */,
 				D3357B311BA690AC00383AE0 /* yuyue_blue.png in Resources */,
@@ -2028,7 +2035,7 @@
 				6F41F5A31B9E758000BA6D31 /* yishengzixun.png in Resources */,
 				6FBEEC3C1B9C316600D5D258 /* AboutMyViewController.xib in Resources */,
 				6FBEEBF81B9BDFF400D5D258 /* Main.storyboard in Resources */,
-				D34ED0BA1BB282A200DE2B8A /* GreenBubble2.png in Resources */,
+				D34ED0BA1BB282A200DE2B8A /* GreenBubble21.png in Resources */,
 				D3FCBEAA1BB6645A00AAEFC5 /* default_icon.png in Resources */,
 				D3357B031BA673E400383AE0 /* blue.png in Resources */,
 				6F7006291BA16D9200663620 /* me_bg.png in Resources */,
@@ -2052,6 +2059,7 @@
 				6FC4E6A71B9FD23000096C57 /* zixun_yingyangke_icon_btn.png in Resources */,
 				6FC6E48D1B9ED9F3008E1A07 /* mode4.png in Resources */,
 				6F41F5A51B9E758F00BA6D31 /* mode2.png in Resources */,
+				D3FCBEB91BB7B58C00AAEFC5 /* BlueBubble2.png in Resources */,
 				D348AEAF1BA3B856006AE53E /* tab_guahao_icon_gray.png in Resources */,
 				D348AEA41BA3B856006AE53E /* ask_blue.png in Resources */,
 				6FC4E6891B9FBF2D00096C57 /* guahao_keshi_icon.png in Resources */,
@@ -2398,6 +2406,9 @@
 					"$(PROJECT_DIR)/Mobile",
 					Medical,
 					Treatment/libidn,
+					"$(PROJECT_DIR)/Mobile",
+					Medical,
+					Treatment/libidn,
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2423,6 +2434,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/Release-iphoneos",
 					"$(PROJECT_DIR)/lib/Release-iphonesimulator",
+					"$(PROJECT_DIR)/Mobile",
+					Medical,
+					Treatment/libidn,
 					"$(PROJECT_DIR)/Mobile",
 					Medical,
 					Treatment/libidn,

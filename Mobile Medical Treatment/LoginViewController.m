@@ -22,6 +22,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+   
+    
     
     [_loginButton setTitle:@"登录" forState:UIControlStateNormal];
     _loginButton.backgroundColor = [UIColor orangeColor];
