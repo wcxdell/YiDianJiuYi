@@ -40,6 +40,7 @@
         //聊天信息
         self.messageContentView = [[UITextView alloc] init];
         self.messageContentView.backgroundColor = [UIColor clearColor];
+        self.messageContentView.font = [UIFont systemFontOfSize:13];
         //不可编辑
         self.messageContentView.editable = NO;
         self.messageContentView.scrollEnabled = NO;
