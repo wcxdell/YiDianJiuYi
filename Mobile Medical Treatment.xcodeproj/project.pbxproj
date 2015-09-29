@@ -266,6 +266,7 @@
 		D3FCBEBB1BB7B59A00AAEFC5 /* GreenBubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FCBEBA1BB7B59A00AAEFC5 /* GreenBubble2.png */; };
 		D3FCBEBC1BB7C5C000AAEFC5 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ECEB31BAEA2D100DE2B8A /* libidn.a */; };
 		D3FCBEBE1BB96E8E00AAEFC5 /* news_friends_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FCBEBD1BB96E8E00AAEFC5 /* news_friends_icon.png */; };
+		D3FCBEC11BBAAFB600AAEFC5 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = D3FCBEBF1BBAAFB600AAEFC5 /* pinyin.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -720,6 +721,8 @@
 		D3FCBEB81BB7B58C00AAEFC5 /* BlueBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueBubble2.png; sourceTree = "<group>"; };
 		D3FCBEBA1BB7B59A00AAEFC5 /* GreenBubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenBubble2.png; sourceTree = "<group>"; };
 		D3FCBEBD1BB96E8E00AAEFC5 /* news_friends_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news_friends_icon.png; sourceTree = "<group>"; };
+		D3FCBEBF1BBAAFB600AAEFC5 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
+		D3FCBEC01BBAAFB600AAEFC5 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1780,6 +1783,8 @@
 		D34ED0A11BB02DFD00DE2B8A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				D3FCBEBF1BBAAFB600AAEFC5 /* pinyin.c */,
+				D3FCBEC01BBAAFB600AAEFC5 /* pinyin.h */,
 				D3357B351BA833F700383AE0 /* Patient.h */,
 				D3357B361BA8341600383AE0 /* Patient.m */,
 				6F41F59D1B9E746500BA6D31 /* FunctionType.h */,
@@ -2155,6 +2160,7 @@
 				D34ED0341BAEA2FD00DE2B8A /* XMPPRoster.m in Sources */,
 				D34ED0351BAEA2FD00DE2B8A /* XMPPSystemInputActivityMonitor.m in Sources */,
 				6FBEEBF21B9BDFF400D5D258 /* AppDelegate.mm in Sources */,
+				D3FCBEC11BBAAFB600AAEFC5 /* pinyin.c in Sources */,
 				D3357B451BAABB1200383AE0 /* FriendsDetailViewController.m in Sources */,
 				D34ED0711BAEA2FD00DE2B8A /* XMPPMessage+XEP_0172.m in Sources */,
 				D34ED0291BAEA2FD00DE2B8A /* XMPPGoogleSharedStatus.m in Sources */,

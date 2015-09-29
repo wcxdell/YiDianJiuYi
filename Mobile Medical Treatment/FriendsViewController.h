@@ -14,5 +14,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray* friends;
 @property (strong, nonatomic) IBOutlet UIControl *friendsNew;
+@property (nonatomic,strong) NSMutableDictionary * dicFriends;
+@property(strong,nonatomic) NSArray * stories;
 
 @end
