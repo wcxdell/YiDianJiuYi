@@ -267,6 +267,7 @@
 		D3FCBEBC1BB7C5C000AAEFC5 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ECEB31BAEA2D100DE2B8A /* libidn.a */; };
 		D3FCBEBE1BB96E8E00AAEFC5 /* news_friends_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FCBEBD1BB96E8E00AAEFC5 /* news_friends_icon.png */; };
 		D3FCBEC11BBAAFB600AAEFC5 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = D3FCBEBF1BBAAFB600AAEFC5 /* pinyin.c */; };
+		D3FCBEC71BBC03DB00AAEFC5 /* ChatMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCBEC61BBC03DB00AAEFC5 /* ChatMessages.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -723,6 +724,8 @@
 		D3FCBEBD1BB96E8E00AAEFC5 /* news_friends_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news_friends_icon.png; sourceTree = "<group>"; };
 		D3FCBEBF1BBAAFB600AAEFC5 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
 		D3FCBEC01BBAAFB600AAEFC5 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		D3FCBEC51BBC03DB00AAEFC5 /* ChatMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessages.h; sourceTree = "<group>"; };
+		D3FCBEC61BBC03DB00AAEFC5 /* ChatMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessages.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1797,6 +1800,8 @@
 				D3FCBEAC1BB6696300AAEFC5 /* Friend.m */,
 				D3FCBEB51BB6872700AAEFC5 /* LoginUser.h */,
 				D3FCBEB61BB6872700AAEFC5 /* LoginUser.m */,
+				D3FCBEC51BBC03DB00AAEFC5 /* ChatMessages.h */,
+				D3FCBEC61BBC03DB00AAEFC5 /* ChatMessages.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -2208,6 +2213,7 @@
 				D34ED0591BAEA2FD00DE2B8A /* XMPPIQ+XEP_0060.m in Sources */,
 				D34ED0121BAEA2FC00DE2B8A /* XMPPDeprecatedPlainAuthentication.m in Sources */,
 				D34ED01A1BAEA2FC00DE2B8A /* NSXMLElement+XMPP.m in Sources */,
+				D3FCBEC71BBC03DB00AAEFC5 /* ChatMessages.m in Sources */,
 				D34ED06F1BAEA2FD00DE2B8A /* XMPPURI.m in Sources */,
 				D34ED06A1BAEA2FD00DE2B8A /* XMPPMessageArchiving.xcdatamodeld in Sources */,
 				D34ED0221BAEA2FD00DE2B8A /* XMPPPresence.m in Sources */,

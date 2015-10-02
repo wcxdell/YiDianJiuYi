@@ -104,12 +104,8 @@
 //    friend9.name = @"企鹅asd";
     
 //    NSMutableArray * fff = [[NSMutableArray alloc] initWithObjects:friend1,friend2,friend3,friend4,friend5,friend6,friend7,friend8,friend9, nil];
-    [self groupedFriends:appDelegate.friends];
-//    [self groupedFriends:fff];
     self.dicFriends = [NSMutableDictionary dictionaryWithCapacity:5];
-    [self addToDictionary];
     
-    self.stories = [self.dicFriends allKeys];
     
     
     [self passValue];
@@ -206,9 +202,18 @@
 
 
 -(void)passValue{
-//    AppDelegate * appDelegate = [self appDelegate];
+    AppDelegate * appDelegate = [self appDelegate];
 //    self.friends = [NSMutableArray arrayWithArray:appDelegate.friends];
-    [self.tableView reloadData];
+    if(self.dicFriends){
+        [self clearFriends];
+        [self groupedFriends:appDelegate.friends];
+    //    [self groupedFriends:fff];
+    
+        [self addToDictionary];
+    
+        self.stories = [self.dicFriends allKeys];
+        [self.tableView reloadData];
+    }
 }
 
 -(NSString*)tableView:(UITableView*)tableView titleForHeaderInSection:(NSInteger)section{
@@ -423,11 +428,43 @@
         [self.dicFriends setObject:typeZ forKey:@"Z"];
     }
     if(typeOT.count != 0){
-        [self.dicFriends setObject:typeOT forKey:@"OT"];
+        [self.dicFriends setObject:typeOT forKey:@"#"];
     }
     else{
         
     }
+}
+
+-(void)clearFriends{
+    [typeA removeAllObjects];
+    [typeB removeAllObjects];
+    [typeC removeAllObjects];
+    [typeD removeAllObjects];
+    [typeE removeAllObjects];
+    [typeF removeAllObjects];
+    [typeG removeAllObjects];
+    [typeH removeAllObjects];
+    [typeI removeAllObjects];
+    [typeJ removeAllObjects];
+    [typeK removeAllObjects];
+    [typeL removeAllObjects];
+    [typeM removeAllObjects];
+    [typeN removeAllObjects];
+    [typeO removeAllObjects];
+    [typeP removeAllObjects];
+    [typeQ removeAllObjects];
+    [typeR removeAllObjects];
+    [typeS removeAllObjects];
+    [typeT removeAllObjects];
+    [typeU removeAllObjects];
+    [typeV removeAllObjects];
+    [typeW removeAllObjects];
+    [typeX removeAllObjects];
+    [typeY removeAllObjects];
+    [typeZ removeAllObjects];
+    [typeOT removeAllObjects];
+    [self.dicFriends removeAllObjects];
+    
 }
 
 

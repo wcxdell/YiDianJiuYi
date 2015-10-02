@@ -10,6 +10,8 @@
 #import "MessageViewController.h"
 #import "MsgReceiveCell.h"
 #import "MsgSendCell.h"
+#import "ChatMessages.h"
+#import "LoginUser.h"
 
 #define padding 20
 
@@ -26,6 +28,13 @@
     appDelegate.messageListDelegate = self;
     //线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.messages = [NSMutableArray array];
+    
+    
+    //聊天记录
+    [self fetch];
+    
+    
     
     [self passMessage];
     // Do any additional setup after loading the view from its nib.
@@ -89,6 +98,7 @@
 //    AppDelegate * appDelegate = [self appDelegate];
     
 //    AppDelegate * appDelegate = [self appDelegate];
+    
     NSString * strSelf = @"You";
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(strFromUsername contains %@ && strToUsername contains %@) ||strFromUsername contains %@",strSelf,self.title,self.title];
     
@@ -98,8 +108,8 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AppDelegate * appDelegate = [self appDelegate];
-    Message* mess = [appDelegate.messages objectAtIndex:indexPath.row];
+//    AppDelegate * appDelegate = [self appDelegate];
+    Message* mess = [self.messages objectAtIndex:indexPath.row];
     
     NSString * msg = mess.strText;
     CGSize textSize = {260.0 , 10000.0};
@@ -193,7 +203,10 @@
 
 -(void)passMessage{
     AppDelegate * appDelegate = [self appDelegate];
-    self.messages = [NSMutableArray arrayWithArray:appDelegate.messages];
+//    self.messages = [NSMutableArray arrayWithArray:appDelegate.messages];
+    if(self.messages && [appDelegate.messages lastObject]){
+        [self.messages addObject:[appDelegate.messages lastObject]];
+    }
     [self.tableView reloadData];
 }
 
@@ -249,12 +262,62 @@
         AppDelegate * appDelegate = [self appDelegate];
         [appDelegate.messages addObject:mess];
         
+        
+        //保存至数据库
+        ChatMessages * mescore = [NSEntityDescription insertNewObjectForEntityForName:@"ChatMessage" inManagedObjectContext:self.appDelegate.managedObjectContext];
+        mescore.name = self.chatUser;
+        mescore.message = message;
+        mescore.time = [NSDate date];
+        mescore.type = @"0";
+        mescore.strTime = strTime;
+        
+        NSError * error = nil;
+        
+        if([self.appDelegate.managedObjectContext save:&error]){
+            //        [[[UIActionSheet alloc] initWithTitle:@"保存成功" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
+        }else{
+            //        [[[UIActionSheet alloc] initWithTitle:@"保存失败" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
+        }
+        
         //重新刷新tableView
         [self.tableView reloadData];
         
     }
     
     
+}
+//init data by database;
+-(void)fetch{
+    
+    
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    NSEntityDescription * entity = [NSEntityDescription entityForName:@"ChatMessage" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    [request setEntity:entity];
+    NSPredicate* pred = [NSPredicate predicateWithFormat:@"name == %@",self.title];
+    [request setPredicate:pred];
+    NSError* error = nil;
+    NSMutableArray * messs = [[self.appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    ChatMessages * oc;
+    [self.messages removeAllObjects];
+    for(oc in messs){
+        
+        Message *mess = [[Message alloc]init];
+        mess.strText = oc.message;
+        if([oc.type isEqualToString:@"0"]){
+            mess.strFromUsername = @"You";
+            mess.msgType = MsgType_Send;
+            mess.strToUsername = self.title;
+        }else{
+            mess.strFromUsername = self.title;
+            mess.msgType = MsgType_Receive;
+            mess.strToUsername = LoginUser.jid;
+        }
+        mess.strTime = oc.strTime;
+        [self.messages addObject:mess];
+        NSLog(@"%@",self.messages);
+        
+    }
+    [self.tableView reloadData];
 }
 
 /*

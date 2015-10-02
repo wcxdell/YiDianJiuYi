@@ -15,6 +15,7 @@
 #import "AboutMyViewController.h"
 #import "Friend.h"
 #import "LoginUser.h"
+#import "ChatMessages.h"
 
 
 @interface AppDelegate ()
@@ -349,6 +350,12 @@
     NSString *to = [[message attributeForName:@"to"] stringValue];
     NSString *strTime = [Static getCurrentTime];
     
+    NSRange range = [from rangeOfString:@"/"];
+    from = [from substringToIndex:range.location];
+    
+    
+    
+    
     if (msg && from) {
         Message *mes = [[Message alloc]init];
         mes.strId = idStr;
@@ -360,6 +367,22 @@
 
         [self newMessageReceived:mes];
         [self.messageListDelegate passMessage];
+        
+        //保存至数据库
+        ChatMessages * mescore = [NSEntityDescription insertNewObjectForEntityForName:@"ChatMessage" inManagedObjectContext:self.managedObjectContext];
+        mescore.name = from;
+        mescore.message = msg;
+        mescore.time = [NSDate date];
+        mescore.type = @"1";
+        mescore.strTime = strTime;
+        
+        NSError * error = nil;
+        
+        if([self.managedObjectContext save:&error]){
+            //        [[[UIActionSheet alloc] initWithTitle:@"保存成功" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
+        }else{
+            //        [[[UIActionSheet alloc] initWithTitle:@"保存失败" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
+        }
         
     }
     

@@ -11,7 +11,7 @@
 
 @interface MessageViewController : UIViewController
 
-@property(nonatomic,strong) NSMutableArray * friends;
+@property(nonatomic,strong) NSMutableArray * messages;
 
 + (UIImage *)scale:(UIImage *)image toSize:(CGSize)size;
 

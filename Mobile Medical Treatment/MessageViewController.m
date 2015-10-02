@@ -9,6 +9,7 @@
 #import "MessageViewController.h"
 #import "AppDelegate.h"
 #import "Friend.h"
+#import "ChatMessages.h"
 
 @interface MessageViewController ()
 
@@ -69,17 +70,16 @@
 }
 - (IBAction)addEntity:(id)sender {
     //add
-    Friend * friend = [NSEntityDescription insertNewObjectForEntityForName:@"Friends" inManagedObjectContext:self.appDelegate.managedObjectContext];
-    friend.name = @"123";
-    friend.presenceType = @"123";
-    
-    NSError * error = nil;
-    
-        if([self.appDelegate.managedObjectContext save:&error]){
-            [[[UIActionSheet alloc] initWithTitle:@"保存成功" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
-        }else{
-            [[[UIActionSheet alloc] initWithTitle:@"保存失败" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
-        }
+//    ChatMessages * mes = [NSEntityDescription insertNewObjectForEntityForName:@"ChatMessage" inManagedObjectContext:self.appDelegate.managedObjectContext];
+//    mes.name = @"123";
+//    
+//    NSError * error = nil;
+//    
+//        if([self.appDelegate.managedObjectContext save:&error]){
+//            [[[UIActionSheet alloc] initWithTitle:@"保存成功" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
+//        }else{
+//            [[[UIActionSheet alloc] initWithTitle:@"保存失败" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
+//        }
     
     
     [self fetch];
@@ -88,14 +88,36 @@
 //fetch
 -(void)fetch{
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
-    NSEntityDescription * entity = [NSEntityDescription entityForName:@"Friends" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    NSEntityDescription * entity = [NSEntityDescription entityForName:@"ChatMessage" inManagedObjectContext:self.appDelegate.managedObjectContext];
     [request setEntity:entity];
     
     NSError* error = nil;
-    self.friends = [[self.appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-    Friend * oc;
-    for(oc in self.friends){
-        NSLog(@"%@",oc.name);
+    self.messages = [[self.appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    ChatMessages * oc;
+    for(oc in self.messages){
+        NSLog(@"用户名：%@",oc.name);
+        NSLog(@"发送时间：%@",oc.strTime);
+        NSLog(@"接受到的信息：%@",oc.type);
+        NSLog(@"发送的消息：%@",oc.message);
+//        [self.appDelegate.managedObjectContext delete:oc];
+//        NSError * error;
+//        if(![self.appDelegate.managedObjectContext save:&error]){
+//            NSLog(@"删除出错:%@   %@",error,[error userInfo]);
+//        }
+    }
+    
+    
+}
+
+- (IBAction)deleteObject:(id)sender {
+    ChatMessages * oc;
+    for(oc in self.messages){
+        [self.appDelegate.managedObjectContext deleteObject:oc];
+        NSError * error;
+        if(![self.appDelegate.managedObjectContext save:&error]){
+            NSLog(@"删除出错");
+        }
+        
     }
 }
 
