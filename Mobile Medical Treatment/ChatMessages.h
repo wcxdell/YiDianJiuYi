@@ -5,7 +5,7 @@
 //  Created by 王长旭 on 15/9/30.
 //  Copyright (c) 2015年 appel. All rights reserved.
 //
-
+//数据库对象
 #import <Foundation/Foundation.h>
 
 @interface ChatMessages : NSObject

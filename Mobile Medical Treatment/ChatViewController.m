@@ -264,12 +264,18 @@
         
         
         //保存至数据库
-        ChatMessages * mescore = [NSEntityDescription insertNewObjectForEntityForName:@"ChatMessage" inManagedObjectContext:self.appDelegate.managedObjectContext];
-        mescore.name = self.chatUser;
-        mescore.message = message;
-        mescore.time = [NSDate date];
-        mescore.type = @"0";
-        mescore.strTime = strTime;
+//        ChatMessages * mescore = [NSEntityDescription insertNewObjectForEntityForName:@"ChatMessage" inManagedObjectContext:self.appDelegate.managedObjectContext];
+        NSManagedObject * mescore = [NSEntityDescription insertNewObjectForEntityForName:@"ChatMessage" inManagedObjectContext:self.appDelegate.managedObjectContext];
+//        mescore.name = self.chatUser;
+        [mescore setValue:self.chatUser forKey:@"name"];
+//        mescore.message = message;
+        [mescore setValue:[NSDate date] forKey:@"time"];
+//        mescore.time = [NSDate date];
+        [mescore setValue:@"0" forKey:@"type"];
+//        mescore.type = @"0";
+        [mescore setValue:strTime forKey:@"strTime"];
+//        mescore.strTime = strTime;
+        [mescore setValue:message forKey:@"message"];
         
         NSError * error = nil;
         

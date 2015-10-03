@@ -7,8 +7,14 @@
         <attribute name="strTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="friends" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Friends" inverseName="message" inverseEntity="Friends" syncable="YES"/>
+    </entity>
+    <entity name="Friends" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="message" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChatMessage" inverseName="friends" inverseEntity="ChatMessage" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ChatMessage" positionX="-45" positionY="-18" width="128" height="135"/>
+        <element name="ChatMessage" positionX="-45" positionY="-18" width="128" height="150"/>
+        <element name="Friends" positionX="-18" positionY="54" width="128" height="75"/>
     </elements>
 </model>

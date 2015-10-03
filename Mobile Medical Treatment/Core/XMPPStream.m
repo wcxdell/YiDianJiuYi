@@ -3502,6 +3502,7 @@ enum XMPPStreamConfig
 	{
 		[self setupKeepAliveTimer];
 		
+        
 		// Notify delegates
 		[multicastDelegate xmppStreamDidConnect:self];
 	}

@@ -110,8 +110,10 @@
 //            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"请输入用户名和密码" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 //            [alert show];
 //        }
-    [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:USERID];
-                [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:PASSWORD];
+    [[NSUserDefaults standardUserDefaults]setObject:@"wcx_d" forKey:USERID];
+                [[NSUserDefaults standardUserDefaults]setObject:@"123456" forKey:PASSWORD];
+//    [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:USERID];
+//                    [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:PASSWORD];
             [appDelegate connect];
 }
 

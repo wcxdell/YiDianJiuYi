@@ -182,6 +182,7 @@
 -(void)setupStream
 {
     xmppStream = [[XMPPStream alloc]init];
+    NSLog(@"%@",xmppStream);
     [xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
     if(xmppRosterCoreDataStorage){
         xmppRoster = [[XMPPRoster alloc] initWithRosterStorage:xmppRosterCoreDataStorage];
@@ -218,9 +219,10 @@
     if (![xmppStream isDisconnected]) {
         return YES;
     }
-    
+//    jabberID = [NSString stringWithFormat:@"%@/wcxdell",jabberID];
     [xmppStream setMyJID:[XMPPJID jidWithString:jabberID]];
     [xmppStream setHostName:SERVER];
+//    [xmppStream setHostPort:5222];
     password = myPassword;
     
     NSError *error = nil;
@@ -369,12 +371,18 @@
         [self.messageListDelegate passMessage];
         
         //保存至数据库
-        ChatMessages * mescore = [NSEntityDescription insertNewObjectForEntityForName:@"ChatMessage" inManagedObjectContext:self.managedObjectContext];
-        mescore.name = from;
-        mescore.message = msg;
-        mescore.time = [NSDate date];
-        mescore.type = @"1";
-        mescore.strTime = strTime;
+//        ChatMessages * mescore = [NSEntityDescription insertNewObjectForEntityForName:@"ChatMessage" inManagedObjectContext:self.managedObjectContext];
+        NSManagedObject * mescore = [NSEntityDescription insertNewObjectForEntityForName:@"ChatMessage" inManagedObjectContext:self.managedObjectContext];
+//        mescore.name = from;
+        [mescore setValue:from forKey:@"name"];
+        [mescore setValue:msg forKey:@"message"];
+//        mescore.message = msg;
+        [mescore setValue:[NSDate date ] forKey:@"time"];
+//        mescore.time = [NSDate date];
+        [mescore setValue:@"1" forKey:@"type"];
+//        mescore.type = @"1";
+        [mescore setValue:strTime forKey:@"strTime"];
+//        mescore.strTime = strTime;
         
         NSError * error = nil;
         

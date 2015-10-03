@@ -5,7 +5,7 @@
 //  Created by 王长旭 on 15/9/21.
 //  Copyright (c) 2015年 appel. All rights reserved.
 //
-
+//聊天页面的非持久化页面
 #import <Foundation/Foundation.h>
 
 typedef enum
