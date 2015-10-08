@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchFriendsViewController">
@@ -16,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="X4h-Vs-UZR">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="X4h-Vs-UZR">
                     <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -24,25 +25,14 @@
                         <outlet property="delegate" destination="-1" id="Zz3-oY-zOV"/>
                     </connections>
                 </tableView>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ghk-np-s5Y">
+                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghk-np-s5Y">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="Yfl-Eu-o0f"/>
-                    </constraints>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="ghk-np-s5Y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9fY-i6-ll3"/>
-                <constraint firstItem="X4h-Vs-UZR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Die-Rk-Sld"/>
-                <constraint firstAttribute="bottom" secondItem="X4h-Vs-UZR" secondAttribute="bottom" id="Wu4-Xi-fij"/>
-                <constraint firstAttribute="trailing" secondItem="ghk-np-s5Y" secondAttribute="trailing" id="bSj-o7-Bip"/>
-                <constraint firstAttribute="trailing" secondItem="X4h-Vs-UZR" secondAttribute="trailing" id="fP5-kE-iPU"/>
-                <constraint firstItem="ghk-np-s5Y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sfz-Jw-Kyd"/>
-                <constraint firstItem="X4h-Vs-UZR" firstAttribute="top" secondItem="ghk-np-s5Y" secondAttribute="bottom" id="wPA-ug-CYx"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="200.5" y="264.5"/>
         </view>
     </objects>
 </document>

@@ -255,6 +255,8 @@
     isOpen = YES;
     NSError *error = nil;
     //验证密码
+    NSString * jabberID = [NSString stringWithFormat:@"%@@%@",LoginUser.userName,HOSTNAME];
+    [self.xmppStream setMyJID:[XMPPJID jidWithString:jabberID]];
     [[self xmppStream] authenticateWithPassword:password error:&error];
     
 }
@@ -292,10 +294,10 @@
     doctorFriend.presenceType = [presence type]; //online/offline
     //当前用户
     NSString *userId = [[sender myJID] user];
-        userId = [NSString stringWithFormat:@"%@@%@",userId,SERVER];
+        userId = [NSString stringWithFormat:@"%@@%@",userId,HOSTNAME];
     //在线用户
     doctorFriend.name = [[presence from] user];
-        doctorFriend.name = [NSString stringWithFormat:@"%@@%@",doctorFriend.name,SERVER];
+        doctorFriend.name = [NSString stringWithFormat:@"%@@%@",doctorFriend.name,HOSTNAME];
     
     NSLog(@"在线好友为：%@",doctorFriend.name);
     
@@ -353,7 +355,12 @@
     NSString *strTime = [Static getCurrentTime];
     
     NSRange range = [from rangeOfString:@"/"];
-    from = [from substringToIndex:range.location];
+    if(range.length == 0){
+        
+    }else{
+        from = [from substringToIndex:range.location];
+    }
+    
     
     
     

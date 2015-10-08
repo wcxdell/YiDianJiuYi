@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mobile Medical Treatment/Core/XMPPStream.m"
-            timestampString = "465473375.766118"
+            timestampString = "465578153.735636"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4442"
-            endingLineNumber = "4442"
+            startingLineNumber = "4443"
+            endingLineNumber = "4443"
             landmarkName = "-xmppParser:didReadRoot:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mobile Medical Treatment/Core/XMPPStream.m"
-            timestampString = "465477197.545215"
+            timestampString = "465579750.181228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "-commonInit"
+            startingLineNumber = "4056"
+            endingLineNumber = "4056"
+            landmarkName = "-handleStartSessionResponse:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mobile Medical Treatment/Core/XMPPStream.m"
+            timestampString = "465579756.252037"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3616"
+            endingLineNumber = "3616"
+            landmarkName = "-handleAuth:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

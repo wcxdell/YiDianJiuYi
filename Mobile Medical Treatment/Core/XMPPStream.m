@@ -1977,7 +1977,8 @@ enum XMPPStreamConfig
 			
 			result = NO;
 		}
-	}};
+	}
+    };
 	
 	
 	if (dispatch_get_specific(xmppQueueTag))

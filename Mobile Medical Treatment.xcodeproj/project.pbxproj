@@ -257,7 +257,7 @@
 		D34ED0BA1BB282A200DE2B8A /* GreenBubble21.png in Resources */ = {isa = PBXBuildFile; fileRef = D34ED0B91BB282A200DE2B8A /* GreenBubble21.png */; };
 		D34ED0BE1BB2AB8800DE2B8A /* NewFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34ED0BC1BB2AB8800DE2B8A /* NewFriendsViewController.m */; };
 		D34ED0BF1BB2AB8800DE2B8A /* NewFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D34ED0BD1BB2AB8800DE2B8A /* NewFriendsViewController.xib */; };
-		D3EB16BB1BBE881400039467 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ECEB31BAEA2D100DE2B8A /* libidn.a */; };
+		D3EB16FB1BC506F900039467 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34ECEB31BAEA2D100DE2B8A /* libidn.a */; };
 		D3FCBEAA1BB6645A00AAEFC5 /* default_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FCBEA91BB6645A00AAEFC5 /* default_icon.png */; };
 		D3FCBEAD1BB6696300AAEFC5 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCBEAC1BB6696300AAEFC5 /* Friend.m */; };
 		D3FCBEB01BB678A600AAEFC5 /* Medical.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3FCBEAE1BB678A600AAEFC5 /* Medical.xcdatamodeld */; };
@@ -739,8 +739,8 @@
 				D34ED0931BAEA35300DE2B8A /* Security.framework in Frameworks */,
 				D34ED0911BAEA34A00DE2B8A /* CFNetwork.framework in Frameworks */,
 				6FC693481BA2BDF80023F83D /* QuartzCore.framework in Frameworks */,
+				D3EB16FB1BC506F900039467 /* libidn.a in Frameworks */,
 				6FC4EEA01BA267730033CA74 /* CoreLocation.framework in Frameworks */,
-				D3EB16BB1BBE881400039467 /* libidn.a in Frameworks */,
 				6FC4EE9E1BA267650033CA74 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2441,6 +2441,9 @@
 					"$(PROJECT_DIR)/Mobile",
 					Medical,
 					Treatment/libidn,
+					"$(PROJECT_DIR)/Mobile",
+					Medical,
+					Treatment/libidn,
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2467,6 +2470,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib/Release-iphoneos",
 					"$(PROJECT_DIR)/lib/Release-iphonesimulator",
+					"$(PROJECT_DIR)/Mobile",
+					Medical,
+					Treatment/libidn,
 					"$(PROJECT_DIR)/Mobile",
 					Medical,
 					Treatment/libidn,
